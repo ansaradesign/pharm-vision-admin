@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-weight: 500;
+}
+svg{
+    flex-shrink: 0;
+}
+
+:root {
+  --border: 0 0% 14.9%;
+  --chart-blue: 220 70% 50%;
+  --chart-mint: 160 60% 45%;
+  --chart-orange: 30 80% 55%;
+  --chart-purple: 280 65% 60%;
+  --chart-pink: 340 75% 55%;
+  --chart-h: 200px;
+  --chart-h-large: 262px;
+}
