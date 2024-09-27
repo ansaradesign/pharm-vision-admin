@@ -2,14 +2,17 @@
 	"name": "next-app-template",
 	"version": "0.0.1",
 	"private": true,
+	"lint-staged": {
+    	"*.js": "eslint --fix"
+  	},
 	"scripts": {
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
 		"prepare": "husky",
-		"pre-commit":"npx lint-staged",
-		"pre-push":"npm run build"
+		"pre-commit": "npx lint-staged",
+		"pre-push": "npm run build"
 	},
 	"dependencies": {
 		"@internationalized/date": "^3.5.5",
@@ -38,6 +41,7 @@
 		"cookies-next": "^4.2.1",
 		"framer-motion": "~11.1.1",
 		"intl-messageformat": "^10.5.0",
+		"lint-staged": "^15.2.10",
 		"lucide-react": "^0.446.0",
 		"next": "14.2.4",
 		"next-themes": "^0.2.1",
