@@ -1,3 +1,5 @@
+"use client";
+
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
