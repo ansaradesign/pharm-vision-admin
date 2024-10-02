@@ -5,8 +5,8 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { fontSans } from "@/src/shared/config/fonts";
-import HeaderLayout from "@/src/shared/ui/layouts/header-layout";
 import { Notifications } from "@/src/features/notification";
+import { HeaderLayout } from "@/src/widgets/header";
 
 export const metadata: Metadata = {
   icons: {

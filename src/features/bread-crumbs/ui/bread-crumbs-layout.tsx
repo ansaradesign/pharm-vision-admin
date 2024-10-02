@@ -9,7 +9,7 @@ interface Props extends PropsWithChildren {
   category: string;
 }
 
-export const BradCrumbsLayout = ({ queryKey, children, category }: Props) => {
+export const BreadCrumbsLayout = ({ queryKey, children, category }: Props) => {
   const { addName } = useBreadCrumbs();
 
   addName(category, queryKey[1] as string, `имя id - ${queryKey[1]}`);

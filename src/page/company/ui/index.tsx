@@ -1,4 +1,4 @@
-import { BradCrumbsLayout } from "@/src/shared/ui/layouts/bread-crumbs-layout";
+import { BreadCrumbsLayout } from "@/src/features/bread-crumbs";
 
 interface Props {
   id: string;
@@ -6,8 +6,8 @@ interface Props {
 
 export const CompanyPage = ({ id }: Props) => {
   return (
-    <BradCrumbsLayout category="companies" queryKey={["company", id]}>
+    <BreadCrumbsLayout category="companies" queryKey={["company", id]}>
       table
-    </BradCrumbsLayout>
+    </BreadCrumbsLayout>
   );
 };
