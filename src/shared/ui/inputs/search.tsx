@@ -4,13 +4,18 @@ import { Input } from "@nextui-org/input";
 import { useState } from "react";
 import { useDebounce } from "react-use";
 
-interface Props {
-  searchFunc: (value: string) => void;
-}
+import { useUpdateSearchParams } from "../../lib/hooks/use-search-params";
 
-export const SearchInput = ({}: Props) => {
+export const SearchInput = () => {
+  const update = useUpdateSearchParams();
   const [search, setSearch] = useState("");
-  const [, cancel] = useDebounce(() => {}, 1500, [search]);
+  const [, cancel] = useDebounce(
+    () => {
+      update("search", search);
+    },
+    1500,
+    [search],
+  );
 
   return (
     <Input

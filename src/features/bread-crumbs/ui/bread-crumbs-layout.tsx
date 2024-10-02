@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from "react";
 
-import { useBreadCrumbs } from "@/src/features/bread-crumbs/";
+import { useBreadCrumbs } from "../model/bread-crumbs-store";
 
 interface Props extends PropsWithChildren {
   queryKey: (string | number)[];

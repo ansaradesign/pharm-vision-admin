@@ -5,8 +5,11 @@ import { Plus } from "@phosphor-icons/react";
 
 export const AddCompany = () => {
   return (
-    <Button className="px-6" endContent={<Plus size={16} weight="bold" />}>
-      Добавить
-    </Button>
+    <Button
+      isIconOnly
+      className="font-medium"
+      color="primary"
+      startContent={<Plus size={18} weight="bold" />}
+    />
   );
 };

@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { HeaderVariants } from "../config/header-variants";
+
 import { Flex } from "@/src/shared/ui/primitives/flex";
 import { ProfileButton } from "@/src/entities/profile";
 import { Text } from "@/src/shared/ui/primitives/text";
@@ -7,7 +9,6 @@ import { ReceiptChip } from "@/src/entities/receipts";
 import { GlobalSearch } from "@/src/features/global-search/";
 import { BackButton } from "@/src/shared/ui/buttons/back-button";
 import { CustomBreadCrumbs } from "@/src/features/bread-crumbs";
-import { HeaderVariants } from "@/src/shared/config/header-variants";
 
 interface Props {
   pathname: string;
