@@ -5,6 +5,7 @@ import { FormEvent, useRef } from "react";
 import { signIn } from "next-auth/react";
 import { Button } from "@nextui-org/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { TAuthRoutes } from "../model/auth-routes.type";
 import { useNotification } from "../../notification/";
@@ -65,6 +66,15 @@ export const Auth = ({ route }: Props) => {
           Войти
         </Button>
       </form>
+      {route === "admin" ? (
+        <Link className="font-[400] text-primary" href={"/auth/company"}>
+          Вход для компаний
+        </Link>
+      ) : (
+        <Link className="font-[400] text-primary" href={"/auth"}>
+          Вход для админов
+        </Link>
+      )}
     </Flex>
   );
 };

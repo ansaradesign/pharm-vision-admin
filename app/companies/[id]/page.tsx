@@ -1,5 +1,7 @@
+import { CompanyPage } from "@/src/page/company";
+
 function Company({ params }: { params: { id: string } }) {
-  return <>Company {params.id}</>;
+  return <CompanyPage {...params} />;
 }
 
 export default Company;

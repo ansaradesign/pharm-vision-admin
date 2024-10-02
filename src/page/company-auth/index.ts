@@ -1,0 +1,1 @@
+export { CompanyAuthPage } from "./ui";

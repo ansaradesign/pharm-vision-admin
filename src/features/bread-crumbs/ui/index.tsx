@@ -21,10 +21,11 @@ export const CustomBreadCrumbs = () => {
   }, [pathname]);
 
   const getHref = (index: number) => {
+    if (index === 0) return "/";
     let href = "";
 
-    for (let i = 0; i <= index; i++) {
-      href += breadcrumbs[index];
+    for (let i = 1; i <= index; i++) {
+      href += breadcrumbs[i];
     }
 
     return href;
