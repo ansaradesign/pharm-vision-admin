@@ -73,7 +73,7 @@ const TableElement = <T extends string>({
             {(columnKey) => (
               <TableCell>
                 <button
-                  className="w-full h-full py-4"
+                  className="w-full h-full py-4 text-start"
                   onClick={() => {
                     if (linkField) {
                       handleRedirect(item[linkField]);

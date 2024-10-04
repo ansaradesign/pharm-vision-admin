@@ -16,8 +16,8 @@ interface Props {
   title: string;
   edit?: React.ReactNode;
   category: TBreadCrumbsDynamic;
-  isOpened: boolean;
-  changeOpened: VoidFunction;
+  isOpened?: boolean;
+  changeOpened?: VoidFunction;
 }
 
 export const EntityHeader = ({
@@ -42,19 +42,21 @@ export const EntityHeader = ({
         <Text size={32} tag="h2" weight={700}>
           {title}
         </Text>
-        <Button
-          isIconOnly
-          startContent={
-            <CaretDown
-              className={caretClass}
-              opacity={0.5}
-              size={20}
-              weight="bold"
-            />
-          }
-          variant="light"
-          onClick={changeOpened}
-        />
+        {typeof isOpened !== "undefined" ? (
+          <Button
+            isIconOnly
+            startContent={
+              <CaretDown
+                className={caretClass}
+                opacity={0.5}
+                size={20}
+                weight="bold"
+              />
+            }
+            variant="light"
+            onClick={changeOpened}
+          />
+        ) : null}
       </Flex>
 
       {edit ? edit : null}
