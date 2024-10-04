@@ -1,11 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowSquareOut } from "@phosphor-icons/react";
 
 import { ICompany } from "../../model";
 
 import { Flex } from "@/src/shared/ui/primitives/flex";
 import { LabelLayout } from "@/src/shared/ui/layouts/label-layout";
-import { Text } from "@/src/shared/ui/primitives/text";
 import { SquareImage } from "@/src/shared/ui/square-image";
+import { Text } from "@/src/shared/ui/primitives/text";
 
 interface Props extends Omit<ICompany, "promotionId" | "name"> {}
 
@@ -28,16 +30,25 @@ export const CompanyInfo = ({ banner, logo, favicon, color }: Props) => {
             </Flex>
           </LabelLayout>
         </Flex>
-        <Flex col>
+        <Flex col width={"70%"}>
           {medias.map(({ title, alt, name, src }) => (
-            <button key={name} className="w-full text-start">
+            <Link key={name} className="w-full text-start" href={src}>
               <LabelLayout bgDefault hover title={title}>
                 <Flex center>
-                  <SquareImage alt={alt} height={70} src={src} />
-                  <Text>{name}</Text>
+                  <Flex center>
+                    <SquareImage alt={alt} height={70} src={src} />
+                    <Text opacity={0.5}>{name}</Text>
+                  </Flex>
+
+                  <ArrowSquareOut
+                    className="mr-4"
+                    opacity={0.5}
+                    size={26}
+                    weight="bold"
+                  />
                 </Flex>
               </LabelLayout>
-            </button>
+            </Link>
           ))}
           <LabelLayout bgDefault title={"Акцентный цвет"}>
             <div

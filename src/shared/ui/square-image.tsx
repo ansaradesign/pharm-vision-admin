@@ -10,7 +10,7 @@ interface Props {
 
 export const SquareImage = ({ height, src, alt }: Props) => {
   return (
-    <Flex className={`h-[${height}px] rounded-xl`} width={"fit-content"}>
+    <Flex className={`h-[${height}px] rounded-xl`} width={height}>
       <Image
         alt={alt}
         className="object-cover rounded-xl"

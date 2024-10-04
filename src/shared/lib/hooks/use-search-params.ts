@@ -14,7 +14,7 @@ export const useUpdateSearchParams = () => {
 
   const update = (param: string, value: string) => {
     if (params) {
-      const newParams = structuredClone(params);
+      const newParams = new URLSearchParams(params.toString());
 
       if (value) {
         newParams.set(param, value);
