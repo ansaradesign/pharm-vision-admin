@@ -12,7 +12,21 @@ type TCrumb = keyof typeof BreadCrumbsOptions;
 export const CustomBreadCrumbs = () => {
   const pathname = usePathname();
   const [breadcrumbs, setBreadcrumbs] = useState<TCrumb[]>([]);
-  const { names } = useBreadCrumbs();
+  const { names, setNames, reset } = useBreadCrumbs();
+
+  useEffect(() => {
+    const localBreadcrumbs = localStorage.getItem("breadcrumbs");
+
+    if (localBreadcrumbs) {
+      try {
+        const names = JSON.parse(localBreadcrumbs);
+
+        setNames(names);
+      } catch (error) {
+        reset();
+      }
+    }
+  }, []);
 
   useEffect(() => {
     let crumbs = pathname.length > 1 ? pathname.split("/").slice(1) : [];

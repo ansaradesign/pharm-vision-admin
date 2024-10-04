@@ -4,21 +4,20 @@ import { immer } from "zustand/middleware/immer";
 
 import { TBreadCrumbsDynamic } from "./bread-crumbs-dynamic.type";
 
+type TNames = Record<TBreadCrumbsDynamic | string, Record<string, string>>;
+
 interface IBreadCrumbsStore {
-  names: Record<TBreadCrumbsDynamic | string, Record<string, string>>;
+  names: TNames;
   addName: (category: TBreadCrumbsDynamic, key: string, value: string) => void;
   reset: VoidFunction;
+  setNames: (obj: TNames) => void;
 }
 
-const localBreadcrumbs = localStorage.getItem("breadcrumbs");
-
-const initialNames = localBreadcrumbs
-  ? JSON.parse(localBreadcrumbs)
-  : {
-      companies: { test: "Тестовая категория" },
-      brands: { test: "Тестовый брэнд" },
-      products: { test: "Тестовый продукт" },
-    };
+const initialNames = {
+  companies: { test: "Тестовая категория" },
+  brands: { test: "Тестовый брэнд" },
+  products: { test: "Тестовый продукт" },
+};
 
 export const useBreadCrumbs = create<IBreadCrumbsStore>()(
   devtools(
@@ -28,6 +27,10 @@ export const useBreadCrumbs = create<IBreadCrumbsStore>()(
         set((state) => {
           state.names[category][key] = value;
           localStorage.setItem("breadcrumbs", JSON.stringify(state.names));
+        }),
+      setNames: (names) =>
+        set((state) => {
+          state.names = names;
         }),
       reset: () =>
         set((state) => {

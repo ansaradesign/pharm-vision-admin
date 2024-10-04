@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Flex } from "@/src/shared/ui/primitives/flex";
+import { Flex } from "./primitives/flex";
 
 interface Props {
   height: number;
