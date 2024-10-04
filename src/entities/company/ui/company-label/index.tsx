@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
-import { ICompanyLabel } from "../../model/company-label/company-label.type";
+import { ICompanyLabel } from "../../model/company-label.type";
 
 import { Text } from "@/src/shared/ui/primitives/text";
 

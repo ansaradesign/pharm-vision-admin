@@ -1,5 +1,3 @@
-"use client";
-
 import { TableHeaderConst } from "../config/table-header";
 import { TableData } from "../config/table-data";
 
@@ -10,9 +8,10 @@ export const CompaniesPage = () => {
   return (
     <CustomTable
       add={<AddCompany />}
+      keyField="promotionId"
+      linkField="promotionId"
       tableData={TableData}
       tableHeader={TableHeaderConst}
-      title="Компании"
     />
   );
 };

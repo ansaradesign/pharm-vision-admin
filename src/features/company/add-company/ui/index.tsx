@@ -7,9 +7,11 @@ export const AddCompany = () => {
   return (
     <Button
       isIconOnly
-      className="font-medium"
+      className="font-medium w-fit px-6 flex items-center"
       color="primary"
-      startContent={<Plus size={18} weight="bold" />}
-    />
+      startContent={<Plus className="mr-2" size={18} weight="bold" />}
+    >
+      Добавить компанию
+    </Button>
   );
 };

@@ -7,9 +7,11 @@ import { useEffect, useState } from "react";
 import { BreadCrumbsOptions } from "../config/bread-crumbs-options";
 import { useBreadCrumbs } from "../model/bread-crumbs-store";
 
+type TCrumb = keyof typeof BreadCrumbsOptions;
+
 export const CustomBreadCrumbs = () => {
   const pathname = usePathname();
-  const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
+  const [breadcrumbs, setBreadcrumbs] = useState<TCrumb[]>([]);
   const { names } = useBreadCrumbs();
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export const CustomBreadCrumbs = () => {
 
     crumbs = crumbs.map((crumb) => `/${crumb}`);
     crumbs.unshift("/");
-    setBreadcrumbs(crumbs);
+    setBreadcrumbs(crumbs as TCrumb[]);
   }, [pathname]);
 
   const getHref = (index: number) => {
@@ -50,10 +52,11 @@ export const CustomBreadCrumbs = () => {
             </BreadcrumbItem>
           );
         } else {
-          let category = breadcrumbs[i - 1];
+          let path = breadcrumbs[i - 1];
 
-          if (category) {
-            category = category.slice(1);
+          if (path) {
+            const category = path.slice(1);
+
             if (names[category]) {
               const name = names[category][crumb.slice(1)];
 

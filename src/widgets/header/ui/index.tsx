@@ -13,7 +13,7 @@ export const HeaderLayout = ({ children }: PropsWithChildren) => {
 
   const headerVariant = HeaderVariants[pathname];
 
-  const mainClass = clsx("overflow-y-scroll py-8 px-8 scrollbar-hide", {
+  const mainClass = clsx("overflow-y-scroll pb-8 pt-4 px-8 scrollbar-hide", {
     "h-dvh": headerVariant === "none",
     "h-[calc(100vh-75px)]": headerVariant === "low",
     "h-[calc(100vh-116px)]": !headerVariant,

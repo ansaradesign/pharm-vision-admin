@@ -30,7 +30,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm4",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -40,7 +40,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm5",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -50,7 +50,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm6",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -60,7 +60,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm7",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -70,7 +70,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm8",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -80,7 +80,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm9",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -90,7 +90,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm10",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -100,7 +100,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm11",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,
@@ -110,7 +110,7 @@ export const TableData = [
     createdAt: "2022-05-21",
   },
   {
-    promotionId: "r-pharm3",
+    promotionId: "r-pharm12",
     name: "Р-ФАРМ3",
     users_amount: 200,
     accrued_cashback: 12400,

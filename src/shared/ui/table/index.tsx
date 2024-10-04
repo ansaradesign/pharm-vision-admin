@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableHeader,
@@ -7,13 +9,14 @@ import {
   TableCell,
   getKeyValue,
 } from "@nextui-org/react";
+import { usePathname, useRouter } from "next/navigation";
 
 import { useUpdateSearchParams } from "../../lib/hooks/use-search-params";
 
 import { TableContainer } from "./table-container";
 
-interface RootProps extends Omit<TableProps, "inContainer"> {
-  title?: string;
+interface RootProps<T extends string>
+  extends Omit<TableProps<T>, "inContainer"> {
   add?: React.ReactNode;
   search?: boolean;
 }
@@ -24,14 +27,28 @@ interface ITableHeader {
   title: string | number;
 }
 
-interface TableProps {
+interface TableProps<T extends string> {
   tableHeader: ITableHeader[];
-  tableData: Record<string, any>[];
+  tableData: Record<string | T, any>[];
   inContainer?: boolean;
+  linkField?: T;
+  keyField: T;
 }
 
-const TableElement = ({ tableHeader, tableData, inContainer }: TableProps) => {
+const TableElement = <T extends string>({
+  tableHeader,
+  tableData,
+  inContainer,
+  linkField,
+  keyField,
+}: TableProps<T>) => {
   const update = useUpdateSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleRedirect = (param: string | number) => {
+    router.push(`${pathname}/${param}`);
+  };
 
   return (
     <Table
@@ -52,10 +69,19 @@ const TableElement = ({ tableHeader, tableData, inContainer }: TableProps) => {
       </TableHeader>
       <TableBody items={tableData}>
         {(item) => (
-          <TableRow key={item.promotionId}>
+          <TableRow key={item[keyField]}>
             {(columnKey) => (
-              <TableCell className="py-4">
-                {getKeyValue(item, columnKey)}
+              <TableCell>
+                <button
+                  className="w-full h-full py-4"
+                  onClick={() => {
+                    if (linkField) {
+                      handleRedirect(item[linkField]);
+                    }
+                  }}
+                >
+                  {getKeyValue(item, columnKey)}
+                </button>
               </TableCell>
             )}
           </TableRow>
@@ -65,24 +91,16 @@ const TableElement = ({ tableHeader, tableData, inContainer }: TableProps) => {
   );
 };
 
-export const CustomTable = ({
-  title,
-  add,
-  search = true,
-  tableData,
-  tableHeader,
-}: RootProps) => {
-  if (title) {
+export const CustomTable = <T extends string>(props: RootProps<T>) => {
+  const { add, search = true, ...restProps } = props;
+
+  if (add || search) {
     return (
-      <TableContainer add={add} search={search} title={title}>
-        <TableElement
-          inContainer
-          tableData={tableData}
-          tableHeader={tableHeader}
-        />
+      <TableContainer add={add} search={search}>
+        <TableElement {...restProps} />
       </TableContainer>
     );
   }
 
-  return <TableElement tableData={tableData} tableHeader={tableHeader} />;
+  return <TableElement {...restProps} />;
 };
