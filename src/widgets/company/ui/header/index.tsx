@@ -4,11 +4,11 @@ import { useState } from "react";
 
 import { TestCompany } from "../../config/test-company";
 
-import { EntityHeader } from "@/src/widgets/entity-header";
 import { EditCompany } from "@/src/features/company/edit-company";
 import { MotionLayout } from "@/src/shared/ui/layouts/motion-layout";
 import { InfoContainer } from "@/src/shared/ui/info-container";
 import { CompanyInfo } from "@/src/entities/company";
+import { EntityHeader } from "@/src/shared/ui/entity-header";
 
 interface Props {
   id: string;

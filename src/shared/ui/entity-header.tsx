@@ -10,6 +10,7 @@ import {
 } from "@/src/features/bread-crumbs";
 import { Flex } from "@/src/shared/ui/primitives/flex";
 import { Text } from "@/src/shared/ui/primitives/text";
+import { SquareImage } from "@/src/shared/ui/square-image";
 
 interface Props {
   id: string | number;
@@ -17,7 +18,10 @@ interface Props {
   edit?: React.ReactNode;
   category: TBreadCrumbsDynamic;
   isOpened?: boolean;
+  icon?: string;
   changeOpened?: VoidFunction;
+  description?: string;
+  titleSize?: number;
 }
 
 export const EntityHeader = ({
@@ -26,7 +30,10 @@ export const EntityHeader = ({
   category,
   id,
   isOpened,
+  icon,
   changeOpened,
+  titleSize = 32,
+  description,
 }: Props) => {
   const { addName } = useBreadCrumbs();
 
@@ -39,9 +46,20 @@ export const EntityHeader = ({
   return (
     <Flex center>
       <Flex center gap={2}>
-        <Text size={32} tag="h2" weight={700}>
-          {title}
-        </Text>
+        {icon ? (
+          <SquareImage
+            alt="logo"
+            className="rounded-full mr-2"
+            height={70}
+            src={icon}
+          />
+        ) : null}
+        <Flex col gap={0}>
+          <Text size={titleSize} tag="h2" weight={700}>
+            {title}
+          </Text>
+          <Text opacity={0.5}>{description}</Text>
+        </Flex>
         {typeof isOpened !== "undefined" ? (
           <Button
             isIconOnly

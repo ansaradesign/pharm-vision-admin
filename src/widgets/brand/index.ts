@@ -1,2 +1,3 @@
 export { BrandHeader } from "./ui/header";
-export { CompanyButtons } from "./ui/buttons";
+export { BrandButtons } from "./ui/buttons";
+export { TestBrand } from "./config/test-brand";

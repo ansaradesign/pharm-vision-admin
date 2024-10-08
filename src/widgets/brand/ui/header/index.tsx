@@ -2,7 +2,7 @@
 
 import { TestBrand } from "../../config/test-brand";
 
-import { EntityHeader } from "@/src/widgets/entity-header";
+import { EntityHeader } from "@/src/shared/ui/entity-header";
 import { EditCompany } from "@/src/features/company/edit-company";
 
 interface Props {
@@ -14,9 +14,12 @@ export const BrandHeader = ({ id }: Props) => {
     <>
       <EntityHeader
         category="brands"
+        description={TestBrand.description}
         edit={<EditCompany />}
+        icon={TestBrand.icon}
         id={TestBrand.id}
         title={TestBrand.name}
+        titleSize={24}
       />
     </>
   );

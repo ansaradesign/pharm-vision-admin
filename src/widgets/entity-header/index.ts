@@ -1,1 +1,0 @@
-export { EntityHeader } from "./ui";
