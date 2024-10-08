@@ -13,10 +13,10 @@ import { Text } from "@/src/shared/ui/primitives/text";
 import { SquareImage } from "@/src/shared/ui/square-image";
 
 interface Props {
-  id: string | number;
+  id?: string | number;
   title: string;
   edit?: React.ReactNode;
-  category: TBreadCrumbsDynamic;
+  category?: TBreadCrumbsDynamic;
   isOpened?: boolean;
   icon?: string;
   changeOpened?: VoidFunction;
@@ -37,7 +37,9 @@ export const EntityHeader = ({
 }: Props) => {
   const { addName } = useBreadCrumbs();
 
-  addName(category, id.toString(), title);
+  if (id && category) {
+    addName(category, id.toString(), title);
+  }
 
   const caretClass = clsx("transition-all", {
     "-rotate-180": isOpened,
@@ -54,27 +56,29 @@ export const EntityHeader = ({
             src={icon}
           />
         ) : null}
-        <Flex col gap={0}>
-          <Text size={titleSize} tag="h2" weight={700}>
-            {title}
-          </Text>
-          <Text opacity={0.5}>{description}</Text>
+        <Flex center width={"fit-content"}>
+          <Flex col gap={0}>
+            <Text size={titleSize} tag="h2" weight={700}>
+              {title}
+            </Text>
+            <Text opacity={0.5}>{description}</Text>
+          </Flex>
+          {typeof isOpened !== "undefined" ? (
+            <Button
+              isIconOnly
+              startContent={
+                <CaretDown
+                  className={caretClass}
+                  opacity={0.5}
+                  size={20}
+                  weight="bold"
+                />
+              }
+              variant="light"
+              onClick={changeOpened}
+            />
+          ) : null}
         </Flex>
-        {typeof isOpened !== "undefined" ? (
-          <Button
-            isIconOnly
-            startContent={
-              <CaretDown
-                className={caretClass}
-                opacity={0.5}
-                size={20}
-                weight="bold"
-              />
-            }
-            variant="light"
-            onClick={changeOpened}
-          />
-        ) : null}
       </Flex>
 
       {edit ? edit : null}

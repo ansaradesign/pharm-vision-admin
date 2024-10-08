@@ -5,4 +5,5 @@ export const BreadCrumbsOptions = {
   "/brands": "Бренды",
   "/products": "Продукты",
   "/offers": "Спец-предложения",
+  "/statistics": "Статистика",
 } as const;

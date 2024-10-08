@@ -11,7 +11,7 @@ interface Props extends PropsWithChildren {
 export const TitleContainer = ({ title, children, endContent }: Props) => {
   return (
     <Flex col className="mt-4">
-      <Flex className="justify-between">
+      <Flex className="justify-between items-end">
         <Text size={20} tag="h2" weight={700}>
           {title}
         </Text>

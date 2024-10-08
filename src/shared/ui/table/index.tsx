@@ -13,13 +13,10 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { useUpdateSearchParams } from "../../lib/hooks/use-search-params";
 
-import { TableContainer } from "./table-container";
+import { TableContainer, TableContainerProps } from "./table-container";
 
-interface RootProps<T extends string>
-  extends Omit<TableProps<T>, "inContainer"> {
-  add?: React.ReactNode;
-  search?: boolean;
-}
+type RootProps<T extends string> = Omit<TableProps<T>, "inContainer"> &
+  TableContainerProps;
 
 interface ITableHeader {
   key: string | number;
@@ -33,6 +30,7 @@ interface TableProps<T extends string> {
   inContainer?: boolean;
   linkField?: T;
   keyField: T;
+  subLink?: string;
 }
 
 const TableElement = <T extends string>({
@@ -41,18 +39,20 @@ const TableElement = <T extends string>({
   inContainer,
   linkField,
   keyField,
+  subLink,
 }: TableProps<T>) => {
   const update = useUpdateSearchParams();
   const pathname = usePathname();
   const router = useRouter();
 
   const handleRedirect = (param: string | number) => {
-    router.push(`${pathname}/${param}`);
+    router.push(`${pathname}/${subLink ? subLink + "/" : ""}${param}`);
   };
 
   return (
     <Table
       isHeaderSticky
+      isStriped
       aria-label="table"
       className={inContainer ? "h-[calc(100%-60px)]" : "h-full"}
       onSortChange={({ column, direction }) => {
@@ -73,7 +73,7 @@ const TableElement = <T extends string>({
             {(columnKey) => (
               <TableCell>
                 <button
-                  className="w-full h-full py-4 text-start"
+                  className="w-full h-full py-2 text-start"
                   onClick={() => {
                     if (linkField) {
                       handleRedirect(item[linkField]);
@@ -92,11 +92,16 @@ const TableElement = <T extends string>({
 };
 
 export const CustomTable = <T extends string>(props: RootProps<T>) => {
-  const { add, search = true, ...restProps } = props;
+  const { add, search = true, containerClassName, extra, ...restProps } = props;
 
-  if (add || search) {
+  if (add || search || extra) {
     return (
-      <TableContainer add={add} search={search}>
+      <TableContainer
+        add={add}
+        containerClassName={containerClassName}
+        extra={extra}
+        search={search}
+      >
         <TableElement {...restProps} />
       </TableContainer>
     );

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { TestCompany } from "../../config/test-company";
 
-import { EditCompany } from "@/src/features/company/edit-company";
+import { EditCompany } from "@/src/features/company/";
 import { MotionLayout } from "@/src/shared/ui/layouts/motion-layout";
 import { InfoContainer } from "@/src/shared/ui/info-container";
 import { CompanyInfo } from "@/src/entities/company";

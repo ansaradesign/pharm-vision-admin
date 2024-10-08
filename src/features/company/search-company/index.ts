@@ -1,1 +1,0 @@
-export { SearchCompany } from "./ui";
