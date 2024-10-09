@@ -2,7 +2,7 @@
 
 import { TestBrand } from "../../config/test-brand";
 
-import { EntityHeader } from "@/src/shared/ui/entity-header";
+import { EntityHeader } from "@/src/widgets/entity-header";
 import { EditBrand } from "@/src/features/brand";
 
 interface Props {

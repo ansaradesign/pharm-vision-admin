@@ -5,10 +5,10 @@ import { useState } from "react";
 import { TestProduct } from "../../config/test-product";
 
 import { EditProduct } from "@/src/features/product";
-import { EntityHeader } from "@/src/shared/ui/entity-header";
 import { MotionLayout } from "@/src/shared/ui/layouts/motion-layout";
 import { Flex } from "@/src/shared/ui/primitives/flex";
 import { Text } from "@/src/shared/ui/primitives/text";
+import { EntityHeader } from "@/src/widgets/entity-header";
 
 export const ProductHeader = () => {
   const [isOpened, setIsOpened] = useState(false);

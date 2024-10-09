@@ -9,8 +9,8 @@ import {
   useBreadCrumbs,
 } from "@/src/features/bread-crumbs";
 import { Flex } from "@/src/shared/ui/primitives/flex";
-import { Text } from "@/src/shared/ui/primitives/text";
 import { SquareImage } from "@/src/shared/ui/square-image";
+import { Text } from "@/src/shared/ui/primitives/text";
 
 interface Props {
   id?: string | number;

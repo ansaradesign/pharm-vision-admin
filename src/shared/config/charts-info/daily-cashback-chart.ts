@@ -1,4 +1,4 @@
-import { DateManager } from "@/src/shared/lib/utils/date-manager";
+import { DateManager } from "../../lib/utils/date-manager";
 
 function generateDateValueArray() {
   const month = 9;

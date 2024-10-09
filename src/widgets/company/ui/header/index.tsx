@@ -8,7 +8,7 @@ import { EditCompany } from "@/src/features/company/";
 import { MotionLayout } from "@/src/shared/ui/layouts/motion-layout";
 import { InfoContainer } from "@/src/shared/ui/info-container";
 import { CompanyInfo } from "@/src/entities/company";
-import { EntityHeader } from "@/src/shared/ui/entity-header";
+import { EntityHeader } from "@/src/widgets/entity-header";
 
 interface Props {
   id: string;
