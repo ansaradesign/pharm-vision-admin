@@ -9,10 +9,6 @@ svg{
     flex-shrink: 0;
 }
 
-button{
-  font-weight: 500;
-}
-
 :root {
   --border: 0 0% 14.9%;
   --chart-blue: 220 70% 50%;

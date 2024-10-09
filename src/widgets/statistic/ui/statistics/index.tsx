@@ -1,7 +1,7 @@
 "use client";
-import { DailyWithdrawalChart } from "../../config/daily-withdrawal-chart";
-import { DailyCashbackChart } from "../../config/daily-cashback-chart";
 
+import { DailyCashbackChart } from "@/src/shared/config/charts-info/daily-cashback-chart";
+import { DailyWithdrawalChart } from "@/src/shared/config/charts-info/daily-withdrawal-chart";
 import { CustomAreaChart } from "@/src/shared/ui/chart/area-chart";
 import { CustomBarChart } from "@/src/shared/ui/chart/bar-chart";
 import { CustomLineChart } from "@/src/shared/ui/chart/line-chart";

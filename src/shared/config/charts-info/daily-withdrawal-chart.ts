@@ -1,4 +1,4 @@
-import { formatDate } from "@/src/shared/lib/utils/format-date";
+import { DateManager } from "@/src/shared/lib/utils/date-manager";
 
 function generateDateValueArray() {
   const month = 9;
@@ -23,5 +23,5 @@ export const DailyWithdrawalChart = {
   title: "Выводы",
   x: "date",
   y: "value",
-  formatX: formatDate,
+  formatX: DateManager.formatDateToStringMonth,
 };

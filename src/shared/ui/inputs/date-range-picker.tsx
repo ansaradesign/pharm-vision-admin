@@ -1,8 +1,8 @@
 import { DateRangePicker, DateRangePickerProps } from "@nextui-org/date-picker";
 import { parseDate } from "@internationalized/date";
 
-import { getDateWithoutTime } from "../../lib/utils/get-date-without-time";
 import { TDateRange } from "../../model/date-range.type";
+import { DateManager } from "../../lib/utils/date-manager";
 
 type Props = {
   range: TDateRange | null;
@@ -19,7 +19,7 @@ export const DateRangePickerInput = ({
   return (
     <DateRangePicker
       hideTimeZone
-      aria-label="dade-range-picker"
+      aria-label="date-range-picker"
       classNames={{
         inputWrapper: "!bg-default",
         input: halfTextOpacity ? "opacity-50" : "",
@@ -33,13 +33,13 @@ export const DateRangePickerInput = ({
           : null
       }
       onChange={(value) => {
-        const start = getDateWithoutTime(new Date());
+        const start = DateManager.getDateWithoutTime();
 
         start.setDate(value.start.day + 1);
         start.setMonth(value.start.month - 1);
         start.setFullYear(value.start.year);
 
-        const end = getDateWithoutTime(new Date());
+        const end = DateManager.getDateWithoutTime();
 
         end.setDate(value.end.day + 1);
         end.setMonth(value.end.month - 1);

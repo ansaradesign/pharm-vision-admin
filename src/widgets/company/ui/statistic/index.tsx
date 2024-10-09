@@ -1,6 +1,4 @@
 "use client";
-import { DailyWithdrawalChart } from "../../config/daily-withdrawal-chart";
-import { DailyCashbackChart } from "../../config/daily-cashback-chart";
 
 import { CustomAreaChart } from "@/src/shared/ui/chart/area-chart";
 import { CustomBarChart } from "@/src/shared/ui/chart/bar-chart";
@@ -9,6 +7,8 @@ import { RadialChart } from "@/src/shared/ui/chart/radial-chart";
 import { DateRangePickerInput } from "@/src/shared/ui/inputs/date-range-picker";
 import { Flex } from "@/src/shared/ui/primitives/flex";
 import { TitleContainer } from "@/src/shared/ui/title-container";
+import { DailyWithdrawalChart } from "@/src/shared/config/charts-info/daily-withdrawal-chart";
+import { DailyCashbackChart } from "@/src/shared/config/charts-info/daily-cashback-chart";
 
 export const CompanyStatistic = () => {
   return (

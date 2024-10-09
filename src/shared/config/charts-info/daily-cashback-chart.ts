@@ -1,4 +1,4 @@
-import { formatDate } from "@/src/shared/lib/utils/format-date";
+import { DateManager } from "@/src/shared/lib/utils/date-manager";
 
 function generateDateValueArray() {
   const month = 9;
@@ -17,11 +17,11 @@ function generateDateValueArray() {
   return result;
 }
 
-export const DailyWithdrawalChart = {
+export const DailyCashbackChart = {
   data: generateDateValueArray(),
-  description: "Кол-во выводов за день",
-  title: "Выводы",
+  description: "Сумма начисленного кешбэка за день",
+  title: "Начисления",
   x: "date",
   y: "value",
-  formatX: formatDate,
+  formatX: DateManager.formatDateToStringMonth,
 };
