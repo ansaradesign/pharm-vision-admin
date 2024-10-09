@@ -21,7 +21,7 @@ export const CompanyButtons = () => {
       </LinkButton>
       <LinkButton href={path + "/offers"}>
         <Flex>
-          <Text size={20}>Спец-предложения</Text>
+          <Text size={20}>Спецпредложения</Text>
           <Text className="leading-8" opacity={0.5}>
             20 шт.
           </Text>

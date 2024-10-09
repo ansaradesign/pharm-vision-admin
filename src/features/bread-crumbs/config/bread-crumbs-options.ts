@@ -4,6 +4,6 @@ export const BreadCrumbsOptions = {
   "/admins": "Aдмины",
   "/brands": "Бренды",
   "/products": "Продукты",
-  "/offers": "Спец-предложения",
+  "/offers": "Спецпредложения",
   "/statistics": "Статистика",
 } as const;

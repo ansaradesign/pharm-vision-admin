@@ -11,16 +11,14 @@ interface Props {
 
 export const BrandHeader = ({ id }: Props) => {
   return (
-    <>
-      <EntityHeader
-        category="brands"
-        description={TestBrand.description}
-        edit={<EditBrand />}
-        icon={TestBrand.icon}
-        id={TestBrand.id}
-        title={TestBrand.name}
-        titleSize={24}
-      />
-    </>
+    <EntityHeader
+      category="brands"
+      description={TestBrand.description}
+      edit={<EditBrand />}
+      icon={TestBrand.icon}
+      id={TestBrand.id}
+      title={TestBrand.name}
+      titleSize={24}
+    />
   );
 };

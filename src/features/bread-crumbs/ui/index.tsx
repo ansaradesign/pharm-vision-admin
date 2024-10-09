@@ -61,7 +61,7 @@ export const CustomBreadCrumbs = () => {
               const name = names[category][crumb.slice(1)];
 
               return (
-                <BreadcrumbItem key={crumb} href={href}>
+                <BreadcrumbItem key={crumb + name} href={href}>
                   {name || "..."}
                 </BreadcrumbItem>
               );
