@@ -1,16 +1,7 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
-import { Pen } from "@phosphor-icons/react";
+import { EditButton } from "@/src/shared/ui/buttons/edit-button";
 
 export const EditProduct = () => {
-  return (
-    <Button
-      className="font-medium px-6"
-      color="primary"
-      startContent={<Pen size={18} weight="bold" />}
-    >
-      Редактировать
-    </Button>
-  );
+  return <EditButton />;
 };
