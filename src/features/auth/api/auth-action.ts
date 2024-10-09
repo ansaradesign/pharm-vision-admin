@@ -1,6 +1,6 @@
-import axios, { AxiosError } from "axios";
-import { jwtDecode } from "jwt-decode";
-import { User } from "next-auth";
+import axios, { AxiosError } from 'axios';
+import { jwtDecode } from 'jwt-decode';
+import { User } from 'next-auth';
 
 interface Params {
   username: string;

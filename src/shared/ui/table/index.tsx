@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Table,
@@ -8,15 +8,14 @@ import {
   TableRow,
   TableCell,
   getKeyValue,
-} from "@nextui-org/react";
-import { usePathname, useRouter } from "next/navigation";
+} from '@nextui-org/react';
+import { usePathname, useRouter } from 'next/navigation';
 
-import { useUpdateSearchParams } from "../../lib/hooks/use-search-params";
+import { useUpdateSearchParams } from '../../lib/hooks/use-search-params';
 
-import { TableContainer, TableContainerProps } from "./table-container";
+import { TableContainer, TableContainerProps } from './table-container';
 
-type RootProps<T extends string> = Omit<TableProps<T>, "inContainer"> &
-  TableContainerProps;
+type RootProps<T extends string> = Omit<TableProps<T>, 'inContainer'> & TableContainerProps;
 
 interface ITableHeader {
   key: string | number;
@@ -46,18 +45,18 @@ const TableElement = <T extends string>({
   const router = useRouter();
 
   const handleRedirect = (param: string | number) => {
-    router.push(`${pathname}/${subLink ? subLink + "/" : ""}${param}`);
+    router.push(`${pathname}/${subLink ? subLink + '/' : ''}${param}`);
   };
 
   return (
     <Table
       isHeaderSticky
       isStriped
-      aria-label="table"
-      className={inContainer ? "h-[calc(100%-60px)]" : "h-full"}
+      aria-label='table'
+      className={inContainer ? 'h-[calc(100%-60px)]' : 'h-full'}
       onSortChange={({ column, direction }) => {
-        update("sort_column", column as string);
-        update("sort_direction", direction as string);
+        update('sort_column', column as string);
+        update('sort_direction', direction as string);
       }}
     >
       <TableHeader>
@@ -73,7 +72,7 @@ const TableElement = <T extends string>({
             {(columnKey) => (
               <TableCell>
                 <button
-                  className="w-full h-full py-2 text-start"
+                  className='w-full h-full py-2 text-start'
                   onClick={() => {
                     if (linkField) {
                       handleRedirect(item[linkField]);

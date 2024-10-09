@@ -1,5 +1,5 @@
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export const useUpdateSearchParams = () => {
   const router = useRouter();
@@ -7,7 +7,7 @@ export const useUpdateSearchParams = () => {
   const [params, setParams] = useState<URLSearchParams>();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       setParams(new URLSearchParams(window.location.search));
     }
   }, []);

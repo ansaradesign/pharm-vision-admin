@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
-import { Flex } from "@/src/shared/ui/primitives/flex";
-import { Text } from "@/src/shared/ui/primitives/text";
+import { Flex } from '@/src/shared/ui/primitives/flex';
+import { Text } from '@/src/shared/ui/primitives/text';
 
 interface Props extends PropsWithChildren {
   title: string;
@@ -9,8 +9,8 @@ interface Props extends PropsWithChildren {
 
 export const DashboardContainer = ({ title, children }: Props) => {
   return (
-    <Flex col className="mt-4">
-      <Text size={20} tag="h2" weight={700}>
+    <Flex col className='mt-4'>
+      <Text size={20} tag='h2' weight={700}>
         {title}
       </Text>
       {children}

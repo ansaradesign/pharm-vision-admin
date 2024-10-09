@@ -1,28 +1,23 @@
-import Image from "next/image";
-import { Button } from "@nextui-org/button";
-import Link from "next/link";
+import Image from 'next/image';
+import { Button } from '@nextui-org/button';
+import Link from 'next/link';
 
-import { ICompanyLabel } from "../../model/company-label.type";
+import { ICompanyLabel } from '../../model/company-label.type';
 
-import { Text } from "@/src/shared/ui/primitives/text";
+import { Text } from '@/src/shared/ui/primitives/text';
 
-export const CompanyLabel = ({
-  name,
-  customersAmount,
-  logo,
-  promotionId,
-}: ICompanyLabel) => {
+export const CompanyLabel = ({ name, customersAmount, logo, promotionId }: ICompanyLabel) => {
   return (
     <Button
       as={Link}
-      className="w-full justify-start"
+      className='w-full justify-start'
       href={`companies/${promotionId}`}
-      radius="lg"
+      radius='lg'
       startContent={
         logo ? (
-          <Image alt={`${name} logo`} className="w-6 h-6" src={logo} />
+          <Image alt={`${name} logo`} className='w-6 h-6' src={logo} />
         ) : (
-          <div className="w-6 h-6 bg-default-200 rounded-full" />
+          <div className='w-6 h-6 bg-default-200 rounded-full' />
         )
       }
     >

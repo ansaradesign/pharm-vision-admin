@@ -1,4 +1,4 @@
-import { BrandsPage } from "@/src/page/brands/";
+import { BrandsPage } from '@/src/page/brands/';
 
 function Brands() {
   return <BrandsPage />;

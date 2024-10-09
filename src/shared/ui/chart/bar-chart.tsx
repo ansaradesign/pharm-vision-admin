@@ -1,22 +1,11 @@
-"use client";
+'use client';
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../card";
-import { TChartsColors } from "../../model/charts-colors.type";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../card';
+import { TChartsColors } from '../../model/charts-colors.type';
 
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from ".";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '.';
 
 interface Props<T extends string, R extends string> {
   title: string;
@@ -38,7 +27,7 @@ export function CustomBarChart<T extends string, R extends string>({
   y,
   data,
   formatX,
-  color = "blue",
+  color = 'blue',
 }: Props<T, R>) {
   const chartConfig = {
     value: {
@@ -53,7 +42,7 @@ export function CustomBarChart<T extends string, R extends string>({
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent className="h-[var(--chart-h-large)]">
+      <CardContent className='h-[var(--chart-h-large)]'>
         <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
@@ -79,11 +68,7 @@ export function CustomBarChart<T extends string, R extends string>({
               tickMargin={8}
             />
             <Bar dataKey={y} fill={`var(--color-${y})`} radius={[2, 2, 2, 2]} />
-            <ChartTooltip
-              content={<ChartTooltipContent />}
-              cursor={false}
-              defaultIndex={1}
-            />
+            <ChartTooltip content={<ChartTooltipContent />} cursor={false} defaultIndex={1} />
           </BarChart>
         </ChartContainer>
       </CardContent>

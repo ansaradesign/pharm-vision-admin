@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
   className?: string;
   opacity?: number;
   size?: number;
@@ -12,8 +12,8 @@ type Props = {
 
 export const Text = ({
   children,
-  tag = "p",
-  className = "md:text-lg",
+  tag = 'p',
+  className = 'md:text-lg',
   opacity = 1,
   size = 16,
   weight = 500,
@@ -28,7 +28,7 @@ export const Text = ({
         opacity,
         fontSize: size,
         fontWeight: weight,
-        userSelect: isCopyable ? "text" : "none",
+        userSelect: isCopyable ? 'text' : 'none',
       }}
     >
       {children}

@@ -1,26 +1,26 @@
 export const TableHeaderConst = [
-  { key: "id", allowsSorting: false, title: "id" },
-  { key: "name", allowsSorting: false, title: "Название" },
+  { key: 'id', allowsSorting: false, title: 'id' },
+  { key: 'name', allowsSorting: false, title: 'Название' },
   {
-    key: "sku",
+    key: 'sku',
     allowsSorting: false,
-    title: "SKU",
+    title: 'SKU',
   },
   {
-    key: "fixCashback",
+    key: 'fixCashback',
     allowsSorting: true,
-    title: "Фиксированный кэшбэк",
+    title: 'Фиксированный кэшбэк',
   },
   {
-    key: "offers_amount",
+    key: 'offers_amount',
     allowsSorting: true,
-    title: "Кол-во спец-предложения",
+    title: 'Кол-во спец-предложения',
   },
-  { key: "receipts_amount", allowsSorting: true, title: "Кол-во чеков" },
+  { key: 'receipts_amount', allowsSorting: true, title: 'Кол-во чеков' },
   {
-    key: "cashback_amount",
+    key: 'cashback_amount',
     allowsSorting: true,
-    title: "Сумма начисленного кешбэка",
+    title: 'Сумма начисленного кешбэка',
   },
-  { key: "createdAt", allowsSorting: true, title: "Дата создания" },
+  { key: 'createdAt', allowsSorting: true, title: 'Дата создания' },
 ];

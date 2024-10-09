@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { HTMLMotionProps, m } from "framer-motion";
-import { PropsWithChildren } from "react";
+import { HTMLMotionProps, m } from 'framer-motion';
+import { PropsWithChildren } from 'react';
 
-type Props = PropsWithChildren<HTMLMotionProps<"div">>;
+type Props = PropsWithChildren<HTMLMotionProps<'div'>>;
 
 export const MotionLayout = ({ children, ...restProps }: Props) => {
   return (

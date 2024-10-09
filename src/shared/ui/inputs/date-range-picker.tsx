@@ -1,8 +1,8 @@
-import { DateRangePicker, DateRangePickerProps } from "@nextui-org/date-picker";
-import { parseDate } from "@internationalized/date";
+import { DateRangePicker, DateRangePickerProps } from '@nextui-org/date-picker';
+import { parseDate } from '@internationalized/date';
 
-import { TDateRange } from "../../model/date-range.type";
-import { DateManager } from "../../lib/utils/date-manager";
+import { TDateRange } from '../../model/date-range.type';
+import { DateManager } from '../../lib/utils/date-manager';
 
 type Props = {
   range: TDateRange | null;
@@ -10,19 +10,14 @@ type Props = {
   halfTextOpacity?: boolean;
 } & DateRangePickerProps;
 
-export const DateRangePickerInput = ({
-  range,
-  onChangeRange,
-  halfTextOpacity,
-  ...rest
-}: Props) => {
+export const DateRangePickerInput = ({ range, onChangeRange, halfTextOpacity, ...rest }: Props) => {
   return (
     <DateRangePicker
       hideTimeZone
-      aria-label="date-range-picker"
+      aria-label='date-range-picker'
       classNames={{
-        inputWrapper: "!bg-default",
-        input: halfTextOpacity ? "opacity-50" : "",
+        inputWrapper: '!bg-default',
+        input: halfTextOpacity ? 'opacity-50' : '',
       }}
       value={
         range

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { AddButton } from "@/src/shared/ui/buttons/add-button";
+import { AddButton } from '@/src/shared/ui/buttons/add-button';
 
 export const AddCompany = () => {
-  return <AddButton item="компанию" />;
+  return <AddButton item='компанию' />;
 };

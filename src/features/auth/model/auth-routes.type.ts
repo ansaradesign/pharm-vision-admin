@@ -1,1 +1,1 @@
-export type TAuthRoutes = "admin" | "company";
+export type TAuthRoutes = 'admin' | 'company';

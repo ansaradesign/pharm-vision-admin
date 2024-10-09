@@ -1,16 +1,13 @@
-"use client";
+'use client';
 
-import { Button } from "@nextui-org/button";
-import { CaretDown } from "@phosphor-icons/react/dist/ssr";
-import clsx from "clsx";
+import { Button } from '@nextui-org/button';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr';
+import clsx from 'clsx';
 
-import {
-  TBreadCrumbsDynamic,
-  useBreadCrumbs,
-} from "@/src/features/bread-crumbs";
-import { Flex } from "@/src/shared/ui/primitives/flex";
-import { SquareImage } from "@/src/shared/ui/square-image";
-import { Text } from "@/src/shared/ui/primitives/text";
+import { TBreadCrumbsDynamic, useBreadCrumbs } from '@/src/features/bread-crumbs';
+import { Flex } from '@/src/shared/ui/primitives/flex';
+import { SquareImage } from '@/src/shared/ui/square-image';
+import { Text } from '@/src/shared/ui/primitives/text';
 
 interface Props {
   id?: string | number;
@@ -41,40 +38,30 @@ export const EntityHeader = ({
     addName(category, id.toString(), title);
   }
 
-  const caretClass = clsx("transition-all", {
-    "-rotate-180": isOpened,
+  const caretClass = clsx('transition-all', {
+    '-rotate-180': isOpened,
   });
 
   return (
     <Flex center>
       <Flex center gap={2}>
         {icon ? (
-          <SquareImage
-            alt="logo"
-            className="rounded-full mr-2"
-            height={70}
-            src={icon}
-          />
+          <SquareImage alt='logo' className='rounded-full mr-2' height={70} src={icon} />
         ) : null}
-        <Flex center width={"fit-content"}>
+        <Flex center width={'fit-content'}>
           <Flex col gap={0}>
-            <Text size={titleSize} tag="h2" weight={700}>
+            <Text size={titleSize} tag='h2' weight={700}>
               {title}
             </Text>
             <Text opacity={0.5}>{description}</Text>
           </Flex>
-          {typeof isOpened !== "undefined" ? (
+          {typeof isOpened !== 'undefined' ? (
             <Button
               isIconOnly
               startContent={
-                <CaretDown
-                  className={caretClass}
-                  opacity={0.5}
-                  size={20}
-                  weight="bold"
-                />
+                <CaretDown className={caretClass} opacity={0.5} size={20} weight='bold' />
               }
-              variant="light"
+              variant='light'
               onClick={changeOpened}
             />
           ) : null}

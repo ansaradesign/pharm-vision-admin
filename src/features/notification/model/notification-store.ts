@@ -1,12 +1,12 @@
-import { create } from "zustand";
-import { devtools } from "zustand/middleware";
-import { immer } from "zustand/middleware/immer";
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
 
-import { INotification } from "./notification.type";
+import { INotification } from './notification.type';
 
 interface NotificationStateI {
   notifications: INotification[];
-  addNotification: (notification: Omit<INotification, "id">) => void;
+  addNotification: (notification: Omit<INotification, 'id'>) => void;
   closeNotificationById: (id: number) => void;
 }
 
@@ -23,9 +23,7 @@ export const useNotification = create<NotificationStateI>()(
         }),
       closeNotificationById: (id) =>
         set((state) => {
-          state.notifications = state.notifications.filter(
-            (note) => note.id !== id,
-          );
+          state.notifications = state.notifications.filter((note) => note.id !== id);
         }),
     })),
   ),

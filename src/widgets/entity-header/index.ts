@@ -1,1 +1,1 @@
-export { EntityHeader } from "./ui";
+export { EntityHeader } from './ui';

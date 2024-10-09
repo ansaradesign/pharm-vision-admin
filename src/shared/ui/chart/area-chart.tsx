@@ -1,23 +1,12 @@
-"use client";
+'use client';
 
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts';
 
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "../chart";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../card";
-import { TChartsColors } from "../../model/charts-colors.type";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '../chart';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../card';
+import { TChartsColors } from '../../model/charts-colors.type';
 
-export const description = "A simple area chart";
+export const description = 'A simple area chart';
 
 interface Props<T extends string, R extends string> {
   title: string;
@@ -38,7 +27,7 @@ export function CustomAreaChart<T extends string, R extends string>({
   y,
   data,
   formatX,
-  color = "blue",
+  color = 'blue',
 }: Props<T, R>) {
   const chartConfig = {
     value: {
@@ -53,7 +42,7 @@ export function CustomAreaChart<T extends string, R extends string>({
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent className="h-[var(--chart-h-large)]">
+      <CardContent className='h-[var(--chart-h-large)]'>
         <ChartContainer config={chartConfig}>
           <AreaChart
             accessibilityLayer
@@ -78,16 +67,13 @@ export function CustomAreaChart<T extends string, R extends string>({
               tickLine={false}
               tickMargin={8}
             />
-            <ChartTooltip
-              content={<ChartTooltipContent indicator="line" />}
-              cursor={false}
-            />
+            <ChartTooltip content={<ChartTooltipContent indicator='line' />} cursor={false} />
             <Area
               dataKey={y}
               fill={`var(--color-${y})`}
               fillOpacity={0.4}
               stroke={`var(--color-${y})`}
-              type="natural"
+              type='natural'
             />
           </AreaChart>
         </ChartContainer>

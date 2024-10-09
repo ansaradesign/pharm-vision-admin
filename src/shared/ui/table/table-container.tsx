@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
-import { Flex } from "../primitives/flex";
-import { SearchInput } from "../inputs/search";
+import { Flex } from '../primitives/flex';
+import { SearchInput } from '../inputs/search';
 
 export interface TableContainerProps extends PropsWithChildren {
   add?: React.ReactNode;
@@ -20,7 +20,7 @@ export const TableContainer = ({
   containerClassName,
 }: TableContainerProps) => {
   return (
-    <Flex col className={"h-full overflow-hidden " + containerClassName}>
+    <Flex col className={'h-full overflow-hidden ' + containerClassName}>
       <Flex center>
         {search ? <SearchInput /> : null}
         {add ? add : null}

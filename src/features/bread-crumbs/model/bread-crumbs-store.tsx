@@ -1,10 +1,10 @@
-import { create } from "zustand";
-import { devtools } from "zustand/middleware";
-import { immer } from "zustand/middleware/immer";
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
 
-import { BreadCrumbsOptions } from "../config/bread-crumbs-options";
+import { BreadCrumbsOptions } from '../config/bread-crumbs-options';
 
-import { TBreadCrumbsDynamic } from "./bread-crumbs-dynamic.type";
+import { TBreadCrumbsDynamic } from './bread-crumbs-dynamic.type';
 
 type TNames = Record<TBreadCrumbsDynamic | string, Record<string, string>>;
 
@@ -23,9 +23,9 @@ categories.forEach((category) => {
   initialNames[category] = {};
 });
 
-const isBrowser = typeof window !== "undefined";
+const isBrowser = typeof window !== 'undefined';
 
-const localBreadcrumbs = isBrowser ? localStorage.getItem("breadcrumbs") : null;
+const localBreadcrumbs = isBrowser ? localStorage.getItem('breadcrumbs') : null;
 
 export const useBreadCrumbs = create<IBreadCrumbsStore>()(
   devtools(
@@ -35,7 +35,7 @@ export const useBreadCrumbs = create<IBreadCrumbsStore>()(
         set((state) => {
           state.names[category][key] = value;
           if (isBrowser) {
-            localStorage.setItem("breadcrumbs", JSON.stringify(state.names));
+            localStorage.setItem('breadcrumbs', JSON.stringify(state.names));
           }
         }),
     })),

@@ -1,24 +1,11 @@
-"use client";
+'use client';
 
-import {
-  Label,
-  PolarGrid,
-  PolarRadiusAxis,
-  RadialBar,
-  RadialBarChart,
-} from "recharts";
+import { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from 'recharts';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../card";
-import { TChartsColors } from "../../model/charts-colors.type";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../card';
+import { TChartsColors } from '../../model/charts-colors.type';
 
-import { ChartConfig, ChartContainer } from "./";
+import { ChartConfig, ChartContainer } from './';
 
 interface Props {
   title: string;
@@ -39,63 +26,58 @@ export function RadialChart({
   label,
   amount,
   fullAmount,
-  color = "blue",
+  color = 'blue',
 }: Props) {
   const chartConfig = {
     amount: {
-      label: "amount",
+      label: 'amount',
       color: `hsl(var(--chart-${color}))`,
     },
   } satisfies ChartConfig;
 
-  const chartData = [{ amount, fill: "var(--color-amount)" }];
+  const chartData = [{ amount, fill: 'var(--color-amount)' }];
 
   const deg = (amount * 360) / fullAmount;
 
   return (
-    <Card className="!w-fit">
-      <CardHeader className="items-center">
+    <Card className='!w-fit'>
+      <CardHeader className='items-center'>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent
-        className={`flex-1 pb-0  ${footerTitle ? "h-[var(--chart-h)]" : "h-[var(--chart-h-large)]"} py-0`}
+        className={`flex-1 pb-0  ${footerTitle ? 'h-[var(--chart-h)]' : 'h-[var(--chart-h-large)]'} py-0`}
       >
-        <ChartContainer className="mx-auto aspect-square" config={chartConfig}>
-          <RadialBarChart
-            data={chartData}
-            endAngle={deg}
-            innerRadius={70}
-            outerRadius={130}
-          >
+        <ChartContainer className='mx-auto aspect-square' config={chartConfig}>
+          <RadialBarChart data={chartData} endAngle={deg} innerRadius={70} outerRadius={130}>
             <PolarGrid
-              className="first:fill-default last:fill-background"
-              gridType="circle"
+              className='first:fill-default last:fill-background'
+              gridType='circle'
               polarRadius={[76, 64]}
               radialLines={false}
-              stroke="none"
+              stroke='none'
             />
-            <RadialBar background dataKey="amount" />
+            <RadialBar background dataKey='amount' />
             <PolarRadiusAxis axisLine={false} tick={false} tickLine={false}>
               <Label
                 content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                  if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
                     return (
                       <text
-                        dominantBaseline="middle"
-                        textAnchor="middle"
+                        dominantBaseline='middle'
+                        textAnchor='middle'
                         x={viewBox.cx}
                         y={viewBox.cy}
                       >
                         <tspan
-                          className="fill-foreground text-4xl font-bold"
+                          className='fill-foreground text-4xl font-bold'
                           x={viewBox.cx}
                           y={viewBox.cy}
                         >
                           {amount.toLocaleString()}
                         </tspan>
                         <tspan
-                          className="fill-foreground opacity-50"
+                          className='fill-foreground opacity-50'
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
                         >
@@ -111,11 +93,9 @@ export function RadialChart({
         </ChartContainer>
       </CardContent>
       {footerTitle ? (
-        <CardFooter className="flex-col gap-2 text-sm">
-          <div className="flex items-center gap-2 font-medium leading-none">
-            {footerTitle}
-          </div>
-          <div className="leading-none opacity-50">{footerDescription}</div>
+        <CardFooter className='flex-col gap-2 text-sm'>
+          <div className='flex items-center gap-2 font-medium leading-none'>{footerTitle}</div>
+          <div className='leading-none opacity-50'>{footerDescription}</div>
         </CardFooter>
       ) : null}
     </Card>

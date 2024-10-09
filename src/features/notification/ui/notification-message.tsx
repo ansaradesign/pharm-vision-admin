@@ -1,18 +1,13 @@
-import { useEffect, useRef } from "react";
-import { Button } from "@nextui-org/button";
+import { useEffect, useRef } from 'react';
+import { Button } from '@nextui-org/button';
 
-import { INotification } from "../model/notification.type";
-import { useNotification } from "../model/notification-store";
-import { NotificationIcons } from "../config/icons";
+import { INotification } from '../model/notification.type';
+import { useNotification } from '../model/notification-store';
+import { NotificationIcons } from '../config/icons';
 
-import { Fader } from "@/src/shared/ui/layouts/fader";
+import { Fader } from '@/src/shared/ui/layouts/fader';
 
-export const NotificationMassage = ({
-  text,
-  type,
-  duration = 3000,
-  id,
-}: INotification) => {
+export const NotificationMassage = ({ text, type, duration = 3000, id }: INotification) => {
   const { closeNotificationById } = useNotification();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -37,12 +32,12 @@ export const NotificationMassage = ({
   return (
     <Fader>
       <Button
-        className="px-12 py-6 !text-white mb-2 data-[hover=true]:opacity-100 border-box text-wrap leading-5 rounded-2xl font-medium"
+        className='px-12 py-6 !text-white mb-2 data-[hover=true]:opacity-100 border-box text-wrap leading-5 rounded-2xl font-medium'
         color={type}
-        variant="shadow"
+        variant='shadow'
         onPress={close}
       >
-        {NotificationIcons[type || "default"]}
+        {NotificationIcons[type || 'default']}
         {text}
       </Button>
     </Fader>

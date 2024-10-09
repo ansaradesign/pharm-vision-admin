@@ -1,1 +1,1 @@
-export { BrandsStatisticsPage } from "./ui";
+export { BrandsStatisticsPage } from './ui';

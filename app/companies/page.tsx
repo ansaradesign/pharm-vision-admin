@@ -1,4 +1,4 @@
-import { CompaniesPage } from "@/src/page/companies";
+import { CompaniesPage } from '@/src/page/companies';
 
 function Companies() {
   return <CompaniesPage />;

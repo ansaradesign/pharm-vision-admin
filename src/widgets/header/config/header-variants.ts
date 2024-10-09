@@ -1,7 +1,7 @@
-type THeader = "none" | "low";
+type THeader = 'none' | 'low';
 
 export const HeaderVariants: Record<string, THeader> = {
-  "/auth": "none",
-  "/": "low",
-  "/auth/company": "none",
+  '/auth': 'none',
+  '/': 'low',
+  '/auth/company': 'none',
 };

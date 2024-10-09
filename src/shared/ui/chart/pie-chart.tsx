@@ -1,19 +1,12 @@
-"use client";
+'use client';
 
-import { Pie, PieChart } from "recharts";
+import { Pie, PieChart } from 'recharts';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../card";
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "../chart";
-import { ChartColorsIndexes } from "../../config/chart-colors-indexes";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../card';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../chart';
+import { ChartColorsIndexes } from '../../config/chart-colors-indexes';
 
-export const description = "A simple pie chart";
+export const description = 'A simple pie chart';
 
 interface Props<T extends string, R extends string> {
   title: string;
@@ -42,7 +35,7 @@ export function CustomPieChart<T extends string, R extends string>({
 }: Props<T, R>) {
   const chartConfig: ChartConfig = {
     other: {
-      label: "other",
+      label: 'other',
       color: ChartColorsIndexes[ChartColorsIndexes.length - 1],
     },
   } satisfies ChartConfig;
@@ -62,36 +55,31 @@ export function CustomPieChart<T extends string, R extends string>({
   });
 
   chartData.push({
-    [label]: "other",
+    [label]: 'other',
     [value]: otherValue,
     fill: `var(--color-other)`,
   });
 
   return (
-    <Card className="flex flex-col !w-fit">
-      <CardHeader className="items-center">
+    <Card className='flex flex-col !w-fit'>
+      <CardHeader className='items-center'>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent
-        className={`flex-1 pb-0  ${footerTitle ? "h-[var(--chart-h)]" : "h-[var(--chart-h-large)]"} py-0`}
+        className={`flex-1 pb-0  ${footerTitle ? 'h-[var(--chart-h)]' : 'h-[var(--chart-h-large)]'} py-0`}
       >
-        <ChartContainer className="mx-auto aspect-square" config={chartConfig}>
+        <ChartContainer className='mx-auto aspect-square' config={chartConfig}>
           <PieChart>
-            <ChartTooltip
-              content={<ChartTooltipContent hideLabel />}
-              cursor={false}
-            />
+            <ChartTooltip content={<ChartTooltipContent hideLabel />} cursor={false} />
             <Pie data={chartData} dataKey={value} nameKey={label} />
           </PieChart>
         </ChartContainer>
       </CardContent>
       {footerTitle ? (
-        <CardFooter className="flex-col gap-2 text-sm text-center">
-          <div className="flex items-center gap-2 font-medium leading-none">
-            {footerTitle}
-          </div>
-          <div className="leading-none opacity-50">{footerDescription}</div>
+        <CardFooter className='flex-col gap-2 text-sm text-center'>
+          <div className='flex items-center gap-2 font-medium leading-none'>{footerTitle}</div>
+          <div className='leading-none opacity-50'>{footerDescription}</div>
         </CardFooter>
       ) : null}
     </Card>

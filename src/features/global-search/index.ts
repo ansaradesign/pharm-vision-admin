@@ -1,1 +1,1 @@
-export { GlobalSearch } from "./ui";
+export { GlobalSearch } from './ui';

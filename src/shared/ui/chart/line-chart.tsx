@@ -1,24 +1,13 @@
-"use client";
+'use client';
 
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, XAxis } from 'recharts';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../card";
-import { TChartsColors } from "../../model/charts-colors.type";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../card';
+import { TChartsColors } from '../../model/charts-colors.type';
 
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from ".";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '.';
 
-export const description = "A simple area chart";
+export const description = 'A simple area chart';
 
 interface Props<T extends string, R extends string> {
   title: string;
@@ -39,7 +28,7 @@ export function CustomLineChart<T extends string, R extends string>({
   y,
   data,
   formatX,
-  color = "blue",
+  color = 'blue',
 }: Props<T, R>) {
   const chartConfig = {
     value: {
@@ -54,7 +43,7 @@ export function CustomLineChart<T extends string, R extends string>({
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent className="h-[var(--chart-h-large)]">
+      <CardContent className='h-[var(--chart-h-large)]'>
         <ChartContainer config={chartConfig}>
           <LineChart
             accessibilityLayer
@@ -79,16 +68,13 @@ export function CustomLineChart<T extends string, R extends string>({
               tickLine={false}
               tickMargin={8}
             />
-            <ChartTooltip
-              content={<ChartTooltipContent indicator="line" />}
-              cursor={false}
-            />
+            <ChartTooltip content={<ChartTooltipContent indicator='line' />} cursor={false} />
             <Line
               dataKey={y}
               dot={false}
               stroke={`var(--color-${y})`}
               strokeWidth={2}
-              type="natural"
+              type='natural'
             />
           </LineChart>
         </ChartContainer>

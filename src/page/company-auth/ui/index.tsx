@@ -1,5 +1,5 @@
-import { Auth } from "@/src/features/auth";
+import { Auth } from '@/src/features/auth';
 
 export const CompanyAuthPage = () => {
-  return <Auth route="company" />;
+  return <Auth route='company' />;
 };

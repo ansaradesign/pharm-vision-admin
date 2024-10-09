@@ -1,1 +1,1 @@
-export type TChartsColors = "blue" | "mint" | "orange" | "purple" | "pink";
+export type TChartsColors = 'blue' | 'mint' | 'orange' | 'purple' | 'pink';

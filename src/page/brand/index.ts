@@ -1,1 +1,1 @@
-export { BrandPage } from "./ui";
+export { BrandPage } from './ui';

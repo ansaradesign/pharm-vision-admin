@@ -1,17 +1,17 @@
-import { CustomNextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import { CustomNextAuthOptions } from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
-import { authAction } from "@/src/features/auth";
+import { authAction } from '@/src/features/auth';
 
 export const options: CustomNextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
 
       credentials: {
-        username: { type: "text" },
-        password: { type: "password" },
-        route: { type: "text" },
+        username: { type: 'text' },
+        password: { type: 'password' },
+        route: { type: 'text' },
       },
 
       async authorize(credentials) {
@@ -24,9 +24,9 @@ export const options: CustomNextAuthOptions = {
           return { ...user, access };
         }
         if (status === 401) {
-          throw new Error("Неправильный логин или пароль");
+          throw new Error('Неправильный логин или пароль');
         }
-        throw new Error("Ошибка авторизации. Пожалуйста, попробуйте позже.");
+        throw new Error('Ошибка авторизации. Пожалуйста, попробуйте позже.');
       },
     }),
   ],
@@ -46,6 +46,6 @@ export const options: CustomNextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/auth",
+    signIn: '/auth',
   },
 };

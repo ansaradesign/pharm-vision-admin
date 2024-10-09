@@ -1,1 +1,1 @@
-export { CompanyAuthPage } from "./ui";
+export { CompanyAuthPage } from './ui';

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { TestBrand } from "../../config/test-brand";
+import { TestBrand } from '../../config/test-brand';
 
-import { EntityHeader } from "@/src/widgets/entity-header";
-import { EditBrand } from "@/src/features/brand";
+import { EntityHeader } from '@/src/widgets/entity-header';
+import { EditBrand } from '@/src/features/brand';
 
 interface Props {
   id: string;
@@ -12,7 +12,7 @@ interface Props {
 export const BrandHeader = ({ id }: Props) => {
   return (
     <EntityHeader
-      category="brands"
+      category='brands'
       description={TestBrand.description}
       edit={<EditBrand />}
       icon={TestBrand.icon}

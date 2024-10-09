@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-import { BreadCrumbsOptions } from "../config/bread-crumbs-options";
-import { useBreadCrumbs } from "../model/bread-crumbs-store";
+import { BreadCrumbsOptions } from '../config/bread-crumbs-options';
+import { useBreadCrumbs } from '../model/bread-crumbs-store';
 
 type TCrumb = keyof typeof BreadCrumbsOptions;
 
@@ -15,16 +15,16 @@ export const CustomBreadCrumbs = () => {
   const { names } = useBreadCrumbs();
 
   useEffect(() => {
-    let crumbs = pathname.length > 1 ? pathname.split("/").slice(1) : [];
+    let crumbs = pathname.length > 1 ? pathname.split('/').slice(1) : [];
 
     crumbs = crumbs.map((crumb) => `/${crumb}`);
-    crumbs.unshift("/");
+    crumbs.unshift('/');
     setBreadcrumbs(crumbs as TCrumb[]);
   }, [pathname]);
 
   const getHref = (index: number) => {
-    if (index === 0) return "/";
-    let href = "";
+    if (index === 0) return '/';
+    let href = '';
 
     for (let i = 1; i <= index; i++) {
       href += breadcrumbs[i];
@@ -36,8 +36,8 @@ export const CustomBreadCrumbs = () => {
   return (
     <Breadcrumbs
       itemClasses={{
-        item: "px-2",
-        separator: "px-0",
+        item: 'px-2',
+        separator: 'px-0',
       }}
     >
       {breadcrumbs.map((crumb, i) => {
@@ -62,7 +62,7 @@ export const CustomBreadCrumbs = () => {
 
               return (
                 <BreadcrumbItem key={crumb + name} href={href}>
-                  {name || "..."}
+                  {name || '...'}
                 </BreadcrumbItem>
               );
             }
