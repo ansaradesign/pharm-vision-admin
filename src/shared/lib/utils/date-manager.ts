@@ -1,5 +1,5 @@
 export class DateManager extends Date {
-  public getDateWithoutTime(date?: Date) {
+  public static getDateWithoutTime(date?: Date) {
     let newDate = new Date();
 
     if (date) {
@@ -11,7 +11,7 @@ export class DateManager extends Date {
     return newDate;
   }
 
-  public formatDateToStringMonth(value: string | number | Date) {
+  public static formatDateToStringMonth(value: string | number | Date) {
     let date = this.toDate(value);
 
     return date.toLocaleDateString('ru-RU', {
@@ -20,7 +20,7 @@ export class DateManager extends Date {
     });
   }
 
-  public toDate(value: string | number | Date) {
+  public static toDate(value: string | number | Date) {
     const date = value instanceof Date ? value : new Date(value);
 
     if (isNaN(date.getTime())) {

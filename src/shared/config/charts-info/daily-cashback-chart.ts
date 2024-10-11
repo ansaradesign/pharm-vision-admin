@@ -1,4 +1,4 @@
-import { DateManager } from "../../lib/utils/date-manager";
+import { DateManager } from '../../lib/utils/date-manager';
 
 function generateDateValueArray() {
   const month = 9;
@@ -8,7 +8,7 @@ function generateDateValueArray() {
 
   for (let day = 1; day <= daysInMonth; day++) {
     const date = new Date(year, month - 1, day);
-    const formattedDate = date.toISOString().split("T")[0];
+    const formattedDate = date.toISOString().split('T')[0];
     const randomValue = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
 
     result.push({ date: formattedDate, value: randomValue });
@@ -19,9 +19,9 @@ function generateDateValueArray() {
 
 export const DailyCashbackChart = {
   data: generateDateValueArray(),
-  description: "Сумма начисленного кешбэка за день",
-  title: "Начисления",
-  x: "date",
-  y: "value",
+  description: 'Сумма начисленного кешбэка за день',
+  title: 'Начисления',
+  x: 'date',
+  y: 'value',
   formatX: DateManager.formatDateToStringMonth,
 };
