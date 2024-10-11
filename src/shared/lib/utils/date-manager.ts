@@ -1,4 +1,4 @@
-class DateManagerClass extends Date {
+export class DateManager extends Date {
   public getDateWithoutTime(date?: Date) {
     let newDate = new Date();
 
@@ -14,9 +14,9 @@ class DateManagerClass extends Date {
   public formatDateToStringMonth(value: string | number | Date) {
     let date = this.toDate(value);
 
-    return date.toLocaleDateString("ru-RU", {
-      month: "short",
-      day: "numeric",
+    return date.toLocaleDateString('ru-RU', {
+      month: 'short',
+      day: 'numeric',
     });
   }
 
@@ -24,11 +24,9 @@ class DateManagerClass extends Date {
     const date = value instanceof Date ? value : new Date(value);
 
     if (isNaN(date.getTime())) {
-      throw new Error("Invalid date value");
+      throw new Error('Invalid date value');
     }
 
     return date;
   }
 }
-
-export const DateManager = new DateManagerClass();
