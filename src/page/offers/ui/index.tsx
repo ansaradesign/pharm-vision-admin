@@ -1,15 +1,14 @@
-import { TableHeaderConst } from '../config/table-header';
 import { TableData } from '../config/table-data';
+import { TableHeaderConst } from '../config/table-header';
 
+import { AddOffer } from '@/src/features/offer';
 import { CustomTable } from '@/src/shared/ui/table';
-import { AddBrand, GoToStatistics } from '@/src/features/brand';
 
-export const BrandsPage = () => {
+export const OffersPage = () => {
   return (
     <CustomTable
-      add={<AddBrand />}
+      add={<AddOffer />}
       containerClassName='pb-16'
-      extra={<GoToStatistics />}
       keyField='id'
       linkField='id'
       tableData={TableData}

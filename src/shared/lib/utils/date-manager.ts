@@ -12,7 +12,7 @@ export class DateManager extends Date {
   }
 
   public static formatDateToStringMonth(value: string | number | Date) {
-    let date = this.toDate(value);
+    let date = DateManager.toDate(value);
 
     return date.toLocaleDateString('ru-RU', {
       month: 'short',
