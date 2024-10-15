@@ -8,6 +8,7 @@ export const CompaniesPage = () => {
   return (
     <CustomTable
       add={<AddCompany />}
+      containerClassName='pb-16'
       keyField='promotionId'
       linkField='promotionId'
       tableData={TableData}

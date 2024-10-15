@@ -1,0 +1,1 @@
+export { OffersStatisticsPage } from './ui';

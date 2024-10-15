@@ -6,7 +6,7 @@ import { Pen } from '@phosphor-icons/react';
 export const EditButton = ({ className, color = 'primary', ...restProps }: ButtonProps) => {
   return (
     <Button
-      className={'px-6 font-medium ' + className}
+      className={'flex-shrink-0 font-medium ' + className}
       color={color}
       startContent={<Pen size={18} weight='bold' />}
       {...restProps}

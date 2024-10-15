@@ -10,7 +10,7 @@ interface Props extends ButtonProps {
 export const AddButton = ({ className, color = 'primary', item, ...restProps }: Props) => {
   return (
     <Button
-      className={'px-6 font-medium ' + className}
+      className={'font-medium flex-shrink-0 ' + className}
       color={color}
       startContent={<Plus size={18} weight='bold' />}
       {...restProps}

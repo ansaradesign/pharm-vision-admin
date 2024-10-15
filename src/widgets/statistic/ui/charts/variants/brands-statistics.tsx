@@ -7,11 +7,10 @@ import { CustomBarChart } from '@/src/shared/ui/chart/bar-chart';
 import { CustomLineChart } from '@/src/shared/ui/chart/line-chart';
 import { RadialChart } from '@/src/shared/ui/chart/radial-chart';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { TitleContainer } from '@/src/shared/ui/title-container';
 
 export const BrandsStatistics = () => {
   return (
-    <TitleContainer title='Статистика'>
+    <>
       <Flex>
         <CustomBarChart {...DailyWithdrawalChart} color='blue' />
         <CustomBarChart {...DailyCashbackChart} color='orange' />
@@ -30,6 +29,6 @@ export const BrandsStatistics = () => {
           title='Одобренные чеки'
         />
       </Flex>
-    </TitleContainer>
+    </>
   );
 };
