@@ -1,1 +1,1 @@
-export { OffersHeader } from './ui/header';
+export { OfferHeader } from './ui/header';
