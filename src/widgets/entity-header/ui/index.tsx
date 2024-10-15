@@ -43,7 +43,7 @@ export const EntityHeader = ({
   });
 
   return (
-    <Flex center>
+    <Flex className='items-end'>
       <Flex center gap={2}>
         {icon ? (
           <SquareImage alt='logo' className='rounded-full mr-2' height={70} src={icon} />
