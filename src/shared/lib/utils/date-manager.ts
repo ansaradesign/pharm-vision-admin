@@ -15,7 +15,7 @@ export class DateManager extends Date {
     let date = DateManager.toDate(value);
 
     return date.toLocaleDateString('ru-RU', {
-      month: 'short',
+      month: 'long',
       day: 'numeric',
     });
   }

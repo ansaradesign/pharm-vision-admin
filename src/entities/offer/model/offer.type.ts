@@ -1,3 +1,5 @@
+import { IFullProduct } from '../../product';
+
 import { EOfferBannerColors } from './banner-backgrounds';
 
 export interface IOfferCondition {
@@ -17,4 +19,8 @@ export interface IOffer {
   banner_color: EOfferBannerColors;
   date_from: string;
   date_to: string;
+}
+
+export interface IFullOffer extends IOffer {
+  products: IFullProduct[];
 }

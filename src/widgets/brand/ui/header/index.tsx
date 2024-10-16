@@ -15,7 +15,7 @@ export const BrandHeader = ({ id }: Props) => {
       category='brands'
       description={TestBrand.description}
       edit={<EditBrand />}
-      icon={TestBrand.icon}
+      icon={TestBrand.logo}
       id={TestBrand.id}
       title={TestBrand.name}
       titleSize={24}
