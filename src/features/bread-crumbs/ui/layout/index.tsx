@@ -18,5 +18,5 @@ export const BreadCrumbsLayout = ({ title, category, id, children }: Props) => {
     addName(category, id.toString(), title);
   }, []);
 
-  return children;
+  return <>{children}</>;
 };
