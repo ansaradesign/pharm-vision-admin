@@ -3,7 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
-import { IOffer } from '../../model/offer.type';
+import { IOffer } from '../../model';
 import { OfferBannerBackgrounds } from '../../model/banner-backgrounds';
 
 type Props = PropsWithChildren & Pick<IOffer, 'id' | 'banner_color'>;

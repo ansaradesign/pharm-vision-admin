@@ -1,6 +1,6 @@
 import { IOfferCondition } from '@/src/entities/offer';
 import { EOfferBannerColors } from '@/src/entities/offer/';
-import { IFullOffer } from '@/src/entities/offer/model/offer.type';
+import { IFullOffer } from '@/src/entities/offer/model';
 import { IFullProduct } from '@/src/entities/product';
 
 export const TestCondition: IOfferCondition = {

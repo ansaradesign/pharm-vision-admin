@@ -1,1 +1,1 @@
-export type { IProduct, IFullProduct } from './model/product.typs';
+export type { IProduct, IFullProduct } from './model';

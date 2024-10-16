@@ -1,5 +1,5 @@
 import { generateOfferProfit } from '../../lib/generate-profit';
-import { IOffer } from '../../model/offer.type';
+import { IOffer } from '../../model';
 import { Condition } from '../../model/condition';
 
 import { ButtonLayout } from './button-layout';

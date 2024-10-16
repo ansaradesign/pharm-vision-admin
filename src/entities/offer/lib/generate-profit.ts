@@ -1,4 +1,4 @@
-import { IOffer } from '../model/offer.type';
+import { IOffer } from '../model';
 
 export const generateOfferProfit = (profit: IOffer['profit'], profitType: IOffer['profitType']) => {
   switch (profitType) {

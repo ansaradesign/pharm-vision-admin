@@ -1,4 +1,4 @@
-import { IOfferCondition } from '../model/offer.type';
+import { IOfferCondition } from '.';
 
 import { pluralCreative } from '@/src/shared/lib/utils/plural';
 import { NUMBERS_CREATIVE_CASE } from '@/src/shared/model/numbers-creative-case';
