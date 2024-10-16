@@ -1,15 +1,17 @@
 'use client';
 
-import { Condition } from '../../model/condition';
-import { generateOfferProfit } from '../../lib/generate-profit';
-import { OfferBannerBackgrounds } from '../../model/banner-backgrounds';
-import { IOffer, IOfferCondition } from '../../model/offer.type';
-
 import { EditOffer } from '@/src/features/offer';
 import { SquareImage } from '@/src/shared/ui/square-image';
 import { DateManager } from '@/src/shared/lib/utils/date-manager';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Flex } from '@/src/shared/ui/primitives/flex';
+import {
+  Condition,
+  generateOfferProfit,
+  IOffer,
+  IOfferCondition,
+  OfferBannerBackgrounds,
+} from '@/src/entities/offer';
 
 export const OfferHeader = ({ condition, ...offer }: IOffer) => {
   const { title } = condition ? new Condition(condition as IOfferCondition) : { title: '' };

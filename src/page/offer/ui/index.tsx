@@ -1,6 +1,5 @@
-import { OfferHeader } from '@/src/entities/offer';
 import { Flex } from '@/src/shared/ui/primitives/flex';
-import { OfferSections, TestOffer } from '@/src/widgets/offer';
+import { OfferHeader, OfferSections, TestOffer } from '@/src/widgets/offer';
 
 export const OfferPage = () => {
   return (
