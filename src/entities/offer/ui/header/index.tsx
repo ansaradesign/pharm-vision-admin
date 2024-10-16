@@ -1,20 +1,21 @@
 'use client';
 
-import { TestCondition, TestOffer } from '../../config/test-offer';
+import { Condition } from '../../model/condition';
+import { generateOfferProfit } from '../../lib/generate-profit';
+import { OfferBannerBackgrounds } from '../../model/banner-backgrounds';
+import { IOffer, IOfferCondition } from '../../model/offer.type';
 
-import { Condition, IOfferCondition, OfferBannerBackgrounds } from '@/src/entities/offer';
-import { generateOfferProfit } from '@/src/entities/offer';
 import { EditOffer } from '@/src/features/offer';
 import { SquareImage } from '@/src/shared/ui/square-image';
 import { DateManager } from '@/src/shared/lib/utils/date-manager';
 import { Text } from '@/src/shared/ui/primitives/text';
 import { Flex } from '@/src/shared/ui/primitives/flex';
 
-export const OfferHeader = () => {
-  const { title } = new Condition(TestCondition as IOfferCondition);
-  const profit = generateOfferProfit(TestOffer.profit, TestOffer.profitType);
+export const OfferHeader = ({ condition, ...offer }: IOffer) => {
+  const { title } = condition ? new Condition(condition as IOfferCondition) : { title: '' };
+  const profit = generateOfferProfit(offer.profit, offer.profitType);
 
-  const backgroundColor = OfferBannerBackgrounds[TestOffer.banner_color];
+  const backgroundColor = OfferBannerBackgrounds[offer.banner_color];
 
   return (
     <div
@@ -27,8 +28,8 @@ export const OfferHeader = () => {
         </Text>
         <Text>{title}</Text>
         <Text opacity={0.5}>
-          C {DateManager.formatDateToStringMonth(TestOffer.date_from)} до{' '}
-          {DateManager.formatDateToStringMonth(TestOffer.date_to)}
+          C {DateManager.formatDateToStringMonth(offer.date_from)} до{' '}
+          {DateManager.formatDateToStringMonth(offer.date_to)}
         </Text>
       </Flex>
       <EditOffer />
@@ -36,7 +37,7 @@ export const OfferHeader = () => {
         alt='offer banner image'
         className='absolute bottom-2 right-2'
         height={160}
-        src={TestOffer.banner_image}
+        src={offer.banner_image}
       />
     </div>
   );

@@ -20,7 +20,7 @@ export const OfferSection = ({ category, elements }: Props) => {
   const title = getTitleFromBreadcrumbsByCategory(category);
 
   return (
-    <TitleContainer title={title}>
+    <TitleContainer mt={1} title={title}>
       <div className='grid grid-cols-3 gap-4'>
         {elements.map((element) => (
           <OfferSectionElement
