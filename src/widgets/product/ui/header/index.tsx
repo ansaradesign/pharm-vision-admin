@@ -7,7 +7,7 @@ import { EntityHeader } from '@/src/widgets/entity-header';
 export const ProductHeader = () => {
   const description = `sku ${TestProduct.sku} ${
     TestProduct.fixCashback
-      ? `, Фиксированный кешбэк: ${TestProduct.fixCashback}${TestProduct.cashbackType === 'percent' ? '%' : '₽'}`
+      ? `, фиксированный кешбэк: ${TestProduct.fixCashback}${TestProduct.cashbackType === 'percent' ? '%' : '₽'}`
       : ''
   }`;
 
