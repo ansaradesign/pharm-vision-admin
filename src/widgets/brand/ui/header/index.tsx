@@ -1,9 +1,8 @@
-'use client';
-
 import { TestBrand } from '../../config/test-brand';
 
-import { EntityHeader } from '@/src/widgets/entity-header';
 import { EditBrand } from '@/src/features/brand';
+import { BreadCrumbsLayout } from '@/src/features/bread-crumbs';
+import { EntityHeader } from '@/src/widgets/entity-header';
 
 interface Props {
   id: string;
@@ -11,14 +10,13 @@ interface Props {
 
 export const BrandHeader = ({ id }: Props) => {
   return (
-    <EntityHeader
-      category='brands'
-      description={TestBrand.description}
-      edit={<EditBrand />}
-      icon={TestBrand.logo}
-      id={TestBrand.id}
-      title={TestBrand.name}
-      titleSize={24}
-    />
+    <BreadCrumbsLayout category='brands' id={TestBrand.id} title={TestBrand.name}>
+      <EntityHeader
+        description={TestBrand.description}
+        edit={<EditBrand />}
+        icon={TestBrand.logo}
+        title={TestBrand.name}
+      />
+    </BreadCrumbsLayout>
   );
 };
