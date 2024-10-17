@@ -20,7 +20,7 @@ export const TitleContainer = ({ title, children, endContent, mt = 4 }: Props) =
         </Text>
         {endContent ? endContent : null}
       </Flex>
-      {children}
+      <Flex col>{children}</Flex>
     </section>
   );
 };

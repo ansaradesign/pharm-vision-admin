@@ -8,6 +8,8 @@ import { ThemeProviderProps } from 'next-themes/dist/types';
 import { LazyMotion, MotionConfig } from 'framer-motion';
 import { SessionProvider } from 'next-auth/react';
 
+import { ModalProvider } from '@/src/features/modal';
+
 export interface ProvidersProps {
   children: React.ReactNode;
   themeProps?: ThemeProviderProps;
@@ -23,7 +25,9 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       <MotionConfig transition={{ type: 'spring', stiffness: 400, damping: 40 }}>
         <SessionProvider>
           <NextUIProvider navigate={router.push}>
-            <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+            <ModalProvider>
+              <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+            </ModalProvider>
           </NextUIProvider>
         </SessionProvider>
       </MotionConfig>

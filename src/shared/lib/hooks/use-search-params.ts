@@ -23,7 +23,7 @@ export const useUpdateSearchParams = () => {
       }
       const newUrl = `${pathname}?${newParams.toString()}`;
 
-      router.replace(newUrl);
+      router.replace(newUrl, { scroll: false });
       setParams(newParams);
     }
   };
