@@ -5,13 +5,12 @@ import { IFullProduct } from '@/src/entities/product';
 export const formatProducts = (products: IFullProduct[]) => {
   const formattedProducts: IOfferSectionElement[] = [];
 
-  products.forEach(({ id, name, sku, brand: { logo, id: brandId } }) => {
+  products.forEach(({ id, name, sku, brand: { logo } }) => {
     formattedProducts.push({
       id,
       title: name,
       description: sku,
       icon: logo,
-      dynamicParam: brandId,
     });
   });
 

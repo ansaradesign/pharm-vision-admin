@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 import { IOffer } from '../../model';
@@ -10,10 +10,9 @@ type Props = PropsWithChildren & Pick<IOffer, 'id' | 'banner_color'>;
 
 export const ButtonLayout = ({ children, id, banner_color }: Props) => {
   const router = useRouter();
-  const { companyId } = useParams();
 
   const goToOffer = () => {
-    router.push(`/companies/${companyId}/offers/${id}`);
+    router.push(`/offers/${id}`);
   };
 
   const backgroundColor = OfferBannerBackgrounds[banner_color];
