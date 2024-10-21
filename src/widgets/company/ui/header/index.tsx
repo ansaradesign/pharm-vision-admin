@@ -12,11 +12,17 @@ export const CompanyHeader = ({ banner, name, color, logo, favicon, promotionId 
   return (
     <BreadCrumbsLayout category='companies' id={promotionId} title={name}>
       <Flex className='pb-4'>
-        <Flex className='aspect-[3/2] rounded-xl overflow-hidden' width={'54%'}>
-          <Image alt='banner' height={1000} src={banner} width={1000} />
-        </Flex>
-        <Flex col className='mt-4'>
-          <Flex center>
+        <div className='rounded-xl overflow-hidden aspect-3/2 flex-shrink-0 '>
+          <Image
+            alt='banner'
+            className='object-cover !h-full'
+            height={292}
+            src={banner}
+            width={438}
+          />
+        </div>
+        <Flex col className='h-fit'>
+          <Flex center className='mt-4'>
             <div className='h-6 w-6 rounded-md' style={{ backgroundColor: '#72E992' }} />
             <Text size={30} weight={700}>
               {name}

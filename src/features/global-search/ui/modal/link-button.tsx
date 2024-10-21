@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 import { IGlobalSearchLink } from '../../model/global-search-link.type';
 
-import { useModal } from '@/src/features/modal';
+interface Props extends IGlobalSearchLink {
+  onClose: () => void;
+}
 
-export const GlobalSearchLinkButton = ({ title, href }: IGlobalSearchLink) => {
-  const { closeModal } = useModal();
-
+export const GlobalSearchLinkButton = ({ title, href, onClose }: Props) => {
   return (
     <Button
       as={Link}
@@ -16,7 +16,7 @@ export const GlobalSearchLinkButton = ({ title, href }: IGlobalSearchLink) => {
       endContent={<CaretRight opacity={0.5} size={20} weight='bold' />}
       href={href}
       variant='light'
-      onClick={closeModal}
+      onClick={onClose}
     >
       {title}
     </Button>

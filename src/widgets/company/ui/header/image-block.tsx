@@ -17,13 +17,13 @@ export const ImageBlock = ({ title, url }: Props) => {
   return (
     <Button
       as={Link}
-      className='h-full py-4 rounded-3xl border-1 border-divider'
+      className='h-full p-3 rounded-3xl border-1 border-divider'
       href={url}
       variant='light'
     >
       <Flex center>
-        <SquareImage alt={title} className='rounded-full' height={60} src={url} />
-        <Text size={24}>{title}</Text>
+        <SquareImage alt={title} className='rounded-full' height={50} src={url} />
+        <Text size={20}>{title}</Text>
       </Flex>
       <ArrowSquareOut className='mr-4' opacity={0.5} size={24} weight='bold' />
     </Button>
