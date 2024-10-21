@@ -1,18 +1,14 @@
 import { useRef } from 'react';
 
-import { CompanyForm, ICompany } from '@/src/entities/company';
 import { ModalWrapper } from '@/src/features/modal';
+import { BrandForm } from '@/src/entities/brand/ui/form';
 import { SaveButton } from '@/src/shared/ui/buttons/save-button';
+import { IBrand } from '@/src/entities/brand';
 
-export const AddCompanyModal = () => {
+export const AddBrandModal = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSave = (
-    company: Partial<ICompany>,
-    logo?: File[],
-    brand?: File[],
-    favicon?: File[],
-  ) => {};
+  const handleSave = (brand: Partial<IBrand>, logo?: File[]) => {};
 
   const handleClick = () => {
     if (formRef.current) {
@@ -21,8 +17,8 @@ export const AddCompanyModal = () => {
   };
 
   return (
-    <ModalWrapper actionButtons={<SaveButton onClick={handleClick} />} title='Создать компанию'>
-      <CompanyForm ref={formRef} formSubmit={handleSave} />
+    <ModalWrapper actionButtons={<SaveButton onClick={handleClick} />} title='Создать бренд'>
+      <BrandForm ref={formRef} formSubmit={handleSave} />
     </ModalWrapper>
   );
 };
