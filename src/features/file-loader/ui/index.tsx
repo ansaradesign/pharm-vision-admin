@@ -13,7 +13,7 @@ import { Flex } from '@/src/shared/ui/primitives/flex';
 
 export const FileLoaderList = memo((props: IFileLoader) => {
   return (
-    <Flex col gap={8}>
+    <Flex col>
       <FileLoader {...props} />
 
       {props.fileList.length > 0 || (props.imageLinks && props.imageLinks.length) ? (

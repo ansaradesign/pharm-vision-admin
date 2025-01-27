@@ -4,11 +4,13 @@ import { ImageBlock } from './image-block';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
 import { Text } from '@/src/shared/ui/primitives/text';
-import { EditButton } from '@/src/shared/ui/buttons/edit-button';
 import { ICompany } from '@/src/entities/company';
 import { BreadCrumbsLayout } from '@/src/features/bread-crumbs';
+import { EditCompany } from '@/src/features/company';
 
-export const CompanyHeader = ({ banner, name, color, logo, favicon, promotionId }: ICompany) => {
+export const CompanyHeader = (company: ICompany) => {
+  const { banner, name, color, logo, favicon, promotionId } = company;
+
   return (
     <BreadCrumbsLayout category='companies' id={promotionId} title={name}>
       <Flex className='pb-4'>
@@ -32,7 +34,7 @@ export const CompanyHeader = ({ banner, name, color, logo, favicon, promotionId 
             <ImageBlock title='Логотип' url={logo} />
             <ImageBlock title='Фавикон' url={favicon} />
           </Flex>
-          <EditButton color='default' size='lg' />
+          <EditCompany {...company} />
         </Flex>
       </Flex>
     </BreadCrumbsLayout>
