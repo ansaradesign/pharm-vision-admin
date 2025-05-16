@@ -1,11 +1,11 @@
 'use client';
 
-import { PiUserCircleThin } from 'react-icons/pi';
+import UserBtn from './user-circle.svg';
 
 export const ProfileButton = () => {
   return (
     <button>
-      <PiUserCircleThin size={50} />
+      <img alt='profile img' src={UserBtn} />
     </button>
   );
 };
