@@ -41,11 +41,11 @@ export const BrandForm = forwardRef<HTMLFormElement | null, Props>(
     return (
       <form ref={ref} className='flex flex-col gap-2' onSubmit={handleSubmit}>
         <LabelLayout title='Название'>
-          <Input placeholder='Нурофен' value={name} onChange={(e) => setName(e.target.value)} />
+          <Input placeholder='Дигестол' value={name} onChange={(e) => setName(e.target.value)} />
         </LabelLayout>
         <LabelLayout title='Описание'>
           <Input
-            placeholder='Средство от головной боли'
+            placeholder='Средство для ранорвого покрытия '
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />

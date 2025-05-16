@@ -1,6 +1,6 @@
 import { ChangeEventHandler, useRef } from 'react';
 import { Button } from '@nextui-org/button';
-import { Plus } from '@phosphor-icons/react';
+import { LuPlus } from 'react-icons/lu';
 
 import { IFileLoader } from '../model/file-loader-type';
 
@@ -40,7 +40,7 @@ export const FileLoader = ({
       <Button
         className='font-medium w-full'
         isDisabled={isSingle && (fileList.length > 0 || (imageLinks && imageLinks.length > 0))}
-        startContent={<Plus size={18} weight='bold' />}
+        startContent={<LuPlus size={18} />}
         onPress={handleOpenInput}
       >
         {buttonTitle || 'Добавить'}

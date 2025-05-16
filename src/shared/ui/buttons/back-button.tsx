@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@nextui-org/button';
-import { CaretLeft } from '@phosphor-icons/react';
+import { PiCaretLeftLight } from 'react-icons/pi';
 import { useRouter } from 'next/navigation';
 
 export const BackButton = () => {
@@ -15,7 +15,7 @@ export const BackButton = () => {
       isIconOnly
       className='!w-6 h-6 min-w-6'
       radius='full'
-      startContent={<CaretLeft opacity={0.5} size={14} weight='bold' />}
+      startContent={<PiCaretLeftLight opacity={0.5} size={14} />}
       onClick={handleBack}
     />
   );

@@ -45,7 +45,7 @@ export const ProductForm = forwardRef<HTMLFormElement, Props>(
       <form ref={ref} className='flex flex-col gap-2' onSubmit={onSubmit}>
         <LabelLayout title='Название'>
           <Input
-            placeholder='Нурофен таб. 6шт.'
+            placeholder='Дигестол повязка 10х10х5мм'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />

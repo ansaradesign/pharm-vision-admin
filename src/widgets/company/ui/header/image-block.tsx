@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@nextui-org/button';
-import { ArrowSquareOut } from '@phosphor-icons/react';
+import { PiArrowSquareOut } from 'react-icons/pi';
 import Link from 'next/link';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
@@ -25,7 +25,7 @@ export const ImageBlock = ({ title, url }: Props) => {
         <SquareImage alt={title} className='rounded-full' height={50} src={url} />
         <Text size={20}>{title}</Text>
       </Flex>
-      <ArrowSquareOut className='mr-4' opacity={0.5} size={24} weight='bold' />
+      <PiArrowSquareOut className='mr-4' opacity={0.5} size={24} />
     </Button>
   );
 };

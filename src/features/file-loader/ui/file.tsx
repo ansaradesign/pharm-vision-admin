@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { m } from 'framer-motion';
-import { File } from '@phosphor-icons/react';
+import { GoFile } from 'react-icons/go';
 
 import { DeleteButton } from './delete-button';
 
@@ -50,7 +50,7 @@ export const FileCard = ({ file, index, setFileList, fileList }: Props) => {
               src={imgUrl || ''}
             />
           ) : (
-            <File opacity={0.5} size={30} weight='bold' />
+            <GoFile opacity={0.5} size={30} />
           )}
           <DeleteButton handleDeleteFile={handleDeleteFile} />
         </div>

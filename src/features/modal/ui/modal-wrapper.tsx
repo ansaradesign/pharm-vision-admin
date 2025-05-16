@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactNode } from 'react';
 import { Button } from '@nextui-org/button';
 import { ScrollShadow } from '@nextui-org/scroll-shadow';
-import { X } from '@phosphor-icons/react/dist/ssr';
+import { LuX } from 'react-icons/lu';
 
 import { useModal } from '../model/modal-store';
 
@@ -20,7 +20,7 @@ export const ModalWrapper = ({ title, children, actionButtons }: Props) => {
           {title}
         </Text>
         <Button isIconOnly className='shadow-base' radius='full' onPress={closeModal}>
-          <X className='w-1/2 h-1/2' weight='bold' />
+          <LuX className='w-1/2 h-1/2' />
         </Button>
       </Flex>
 

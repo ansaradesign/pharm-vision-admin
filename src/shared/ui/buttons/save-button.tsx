@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { FloppyDisk } from '@phosphor-icons/react';
+import { PiFloppyDisk } from 'react-icons/pi';
 
 interface Props {
   onClick: VoidFunction;
@@ -10,7 +10,7 @@ export const SaveButton = ({ onClick }: Props) => {
     <Button
       className='font-medium w-full'
       color='success'
-      startContent={<FloppyDisk size={20} weight='bold' />}
+      startContent={<PiFloppyDisk size={20} />}
       variant='shadow'
       onClick={onClick}
     >

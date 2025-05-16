@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { Trash } from '@phosphor-icons/react';
+import { GrTrash } from 'react-icons/gr';
 
 interface Props {
   handleDeleteFile: () => void;
@@ -14,7 +14,7 @@ export const DeleteButton = ({ handleDeleteFile }: Props) => {
       size='sm'
       onClick={handleDeleteFile}
     >
-      <Trash color='white' size={18} weight='bold' />
+      <GrTrash color='white' size={18} />
     </Button>
   );
 };

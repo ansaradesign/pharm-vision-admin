@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { CaretRight } from '@phosphor-icons/react/dist/ssr';
+import { PiCaretRight } from 'react-icons/pi';
 import Link from 'next/link';
 
 import { CompanyLabel, ICompanyLabel } from '@/src/entities/company';
@@ -21,7 +21,7 @@ export const CompaniesBar = ({ companies }: Props) => {
         color='primary'
         href='/companies'
         radius='lg'
-        startContent={<CaretRight size={20} weight='bold' />}
+        startContent={<PiCaretRight size={20} />}
       />
     </Flex>
   );

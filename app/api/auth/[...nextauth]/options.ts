@@ -41,11 +41,26 @@ export const options: CustomNextAuthOptions = {
         role: token.role,
         access: token.access,
       };
-
       return session;
     },
   },
   pages: {
     signIn: '/auth',
+  },
+  session: {
+    strategy: 'jwt',
+  },
+  cookies: {
+    sessionToken: {
+      name: `__Secure-next-auth.session-token`, //защита от подмены cookie
+      options: {
+        httpOnly: true,
+        sameSite: 'lax', //CSPF атаки
+        path: '/',
+        secure: process.env.NODE_ENV !== 'development', //динамические secure
+        //в продакшн будет true
+        //в двелоп false
+      },
+    },
   },
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@nextui-org/button';
-import { MagnifyingGlass } from '@phosphor-icons/react';
+import { CiSearch } from 'react-icons/ci';
 import { Modal, ModalContent, useDisclosure } from '@nextui-org/react';
 
 import { GlobalSearchModal } from './modal';
@@ -15,7 +15,7 @@ export const GlobalSearch = () => {
     <>
       <Button
         className='min-w-60 justify-start'
-        startContent={<MagnifyingGlass opacity={0.5} size={18} weight='bold' />}
+        startContent={<CiSearch opacity={0.5} size={18} />}
         onClick={onOpen}
       >
         <Text opacity={0.5} size={14} tag={'span'}>

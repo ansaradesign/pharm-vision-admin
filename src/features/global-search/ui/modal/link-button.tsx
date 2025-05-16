@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { CaretRight } from '@phosphor-icons/react';
+import { PiCaretRight } from 'react-icons/pi';
 import Link from 'next/link';
 
 import { IGlobalSearchLink } from '../../model/global-search-link.type';
@@ -13,7 +13,7 @@ export const GlobalSearchLinkButton = ({ title, href, onClose }: Props) => {
     <Button
       as={Link}
       className='justify-between font-medium border-1 border-divider'
-      endContent={<CaretRight opacity={0.5} size={20} weight='bold' />}
+      endContent={<PiCaretRight opacity={0.5} size={20} />}
       href={href}
       variant='light'
       onClick={onClose}
