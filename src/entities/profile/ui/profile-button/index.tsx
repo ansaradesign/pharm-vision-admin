@@ -1,13 +1,11 @@
 'use client';
 
-import Image from 'next/image';
-
-import UserBtn from './user-circle.svg';
+import { CgProfile } from 'react-icons/cg';
 
 export const ProfileButton = () => {
   return (
     <button>
-      <Image alt='Profile' height={50} quality={100} src={UserBtn} width={50} />
+      <CgProfile size={50} /> as JSX.Element
     </button>
   );
 };
