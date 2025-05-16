@@ -1,5 +1,6 @@
 import { Button } from '@nextui-org/button';
-import { GrTrash } from 'react-icons/gr';
+
+import { PiTrashLight } from 'react-icons/pi';
 
 interface Props {
   handleDeleteFile: () => void;
@@ -14,7 +15,7 @@ export const DeleteButton = ({ handleDeleteFile }: Props) => {
       size='sm'
       onClick={handleDeleteFile}
     >
-      {(<GrTrash color='white' size={18} />) as JSX.Element}
+      <PiTrashLight color='white' size={18} />
     </Button>
   );
 };

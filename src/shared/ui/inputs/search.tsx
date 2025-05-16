@@ -6,6 +6,9 @@ import { useDebounce } from 'react-use';
 import { CiSearch } from 'react-icons/ci';
 
 import { useUpdateSearchParams } from '../../lib/hooks/use-search-params';
+import { IconType } from 'react-icons';
+
+const SearchIcon = CiSearch as IconType;
 
 interface Props {
   isGlobal?: boolean;
@@ -27,7 +30,7 @@ export const SearchInput = ({ isGlobal }: Props) => {
       className='w-full'
       classNames={{ input: 'font-medium' }}
       placeholder='Поиск...'
-      startContent={<CiSearch className='opacity-50' size={20} />}
+       startContent={<SearchIcon className='opacity-50' size={20} />}
       onChange={(e) => {
         cancel();
         setSearch(e.target.value);
