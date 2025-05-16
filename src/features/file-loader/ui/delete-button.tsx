@@ -14,7 +14,7 @@ export const DeleteButton = ({ handleDeleteFile }: Props) => {
       size='sm'
       onClick={handleDeleteFile}
     >
-      <GrTrash color='white' size={18} />
+      {(<GrTrash color='white' size={18} />) as JSX.Element}
     </Button>
   );
 };
