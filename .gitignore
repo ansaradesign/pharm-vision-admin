@@ -33,3 +33,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Файлы окружения
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Логи
+*.log

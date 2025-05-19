@@ -1,3 +1,5 @@
+import { ERRORS } from "../../consts/error";
+
 export class DateManager extends Date {
   public static getDateWithoutTime(date?: Date) {
     let newDate = new Date();
@@ -24,7 +26,7 @@ export class DateManager extends Date {
     const date = value instanceof Date ? value : new Date(value);
 
     if (isNaN(date.getTime())) {
-      throw new Error('Invalid date value');
+      throw new Error(ERRORS.INVALID_DATA);
     }
 
     return date;

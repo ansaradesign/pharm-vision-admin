@@ -1,3 +1,6 @@
+import { API } from '@/src/shared/consts/api';
+import { ERRORS } from '@/src/shared/consts/error';
+import { ROUTES } from '@/src/shared/consts/routes';
 import axios, { AxiosError } from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { User } from 'next-auth';
@@ -20,17 +23,12 @@ export const authAction = async (params: Params): Promise<IRes> => {
 
   try {
     const { data } = await axios.post<{ access: string }>(
-      `${process.env.NEXT_PUBLIC_API_AUTH_ACTIONS}api/auth/login/${route}`,
+      `${API.API_BASE}${ROUTES.AUTH_ACTIONS}${route}`,
       { username, password },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
     );
 
     if (!data?.access?.trim()) {
-      return { status: 401, error: 'Invalid or empty token received' };
+      return { status: 401, error: ERRORS.TOKEN_ERROR };
     }
 
     const user: User = jwtDecode(data.access);
@@ -41,7 +39,7 @@ export const authAction = async (params: Params): Promise<IRes> => {
 
     return {
       status: error.status || 500,
-      error: error.message || 'Authentication failed',
+      error: error.message || ERRORS.AUTH_ERROR,
     };
   }
 };

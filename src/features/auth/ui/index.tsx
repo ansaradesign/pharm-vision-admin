@@ -11,6 +11,7 @@ import { TAuthRoutes } from '../model/auth-routes.type';
 import { useNotification } from '../../notification/';
 
 import { Flex } from '@/src/shared/ui/primitives/flex';
+import { ROUTES } from '@/src/shared/consts/routes';
 
 interface Props {
   route: TAuthRoutes;
@@ -59,11 +60,11 @@ export const Auth = ({ route }: Props) => {
         </Button>
       </form>
       {route === 'admin' ? (
-        <Link className='font-[400] text-primary' href={'/auth/company'}>
+        <Link className='font-[400] text-primary' href={ROUTES.AUTH_COMPANY}>
           Вход для компаний
         </Link>
       ) : (
-        <Link className='font-[400] text-primary' href={'/auth'}>
+        <Link className='font-[400] text-primary' href={ROUTES.AUTH_ADMIN}>
           Вход для админов
         </Link>
       )}

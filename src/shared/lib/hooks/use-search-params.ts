@@ -10,8 +10,10 @@ export const useUpdateSearchParams = () => {
   );
 
   useEffect(() => {
-    setParams(new URLSearchParams(searchParams?.toString()));
-  }, [searchParams]);
+    if (typeof window != 'undefined') {
+      setParams(new URLSearchParams(window.location.search));
+    }
+  }, []);
 
   const update = useCallback(
     (param: string, value: string) => {

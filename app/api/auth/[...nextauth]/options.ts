@@ -2,6 +2,8 @@ import { CustomNextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { authAction } from '@/src/features/auth';
+import { ROUTES } from '@/src/shared/consts/routes';
+import { ERRORS } from '@/src/shared/consts/error';
 
 export const options: CustomNextAuthOptions = {
   providers: [
@@ -24,9 +26,9 @@ export const options: CustomNextAuthOptions = {
           return { ...user, access };
         }
         if (status === 401) {
-          throw new Error('Неправильный логин или пароль');
+          throw new Error(ERRORS.WRONG_USER_DATA);
         }
-        throw new Error('Ошибка авторизации. Пожалуйста, попробуйте позже.');
+        throw new Error(ERRORS.AUTH_ERROR);
       },
     }),
   ],
@@ -45,7 +47,7 @@ export const options: CustomNextAuthOptions = {
     },
   },
   pages: {
-    signIn: '/auth',
+    signIn: ROUTES.AUTH_ADMIN,
   },
   session: {
     strategy: 'jwt',
